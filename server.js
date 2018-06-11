@@ -1,17 +1,17 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var port = process.env.PORT || 8080;
-
 var app = express();
+var PORT = process.env.PORT || 8080;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// Requiring our models for syncing
+var db = require("./models");
 
-// parse application/json
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -28,7 +28,8 @@ var userRoutes = require("./controllers/usersController.js");
 
 app.use("/users", userRoutes);
 
-app.listen(port, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + port);
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

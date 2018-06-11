@@ -30,22 +30,26 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  // User.associate = function(models) {
+  //   // We're saying that a User should belong to an Occasion
+  //   // A User can't be created without an Occasion due to the foreign key constraint
+  //   User.belongsTo(models.Occasion, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
+
   User.associate = function(models) {
-    // We're saying that a User should belong to an Occasion
-    // A User can't be created without an Occasion due to the foreign key constraint
-    User.belongsTo(models.Occasion, {
-      foreignKey: {
-        allowNull: false
-      }
+    User.hasMany(models.Food, {
+      onDelete: "cascade"
     });
   };
 
-  User.associate = (models) => {
-    User.belongsToMany(models.Restriction, {
-      through: 'Restriction',
-      as: 'groups'
-      // foreignKey: 'userId'
-    });
+  User.associate = (models) =>{
+    User.belongsToMany(models.Occasion, {
+      through: {model: models.UserOccasion}
+    })
   };
 
   return User;

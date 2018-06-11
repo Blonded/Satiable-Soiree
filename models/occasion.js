@@ -50,9 +50,15 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Occasion.associate = function(models) {
-    // Associating Occasion with Users
-    // When an Author is deleted, also delete any associated Posts
-    Occasion.hasMany(models.User);
+    Occasion.hasMany(models.Food, {
+      onDelete: "cascade"
+    });
+  };
+
+  Occasion.associate = (models) => {
+    Occasion.belongsToMany(models.User, {
+      through: {model: models.UserOccasion}
+    })
   };
 
   return Occasion;

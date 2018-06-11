@@ -1,0 +1,15 @@
+
+<h1>Users!</h1>
+
+<h2>All Users Info</h2>
+<a href="/users/pets">See Users and Their Pets</a>
+
+  {{#each users}}
+    
+	<div>
+	<h2>{{userName}}</h2>
+    <p>{{address}}</p>
+    <p>{{phone}}</p>
+	</div>
+	<hr>
+  {{/each}}

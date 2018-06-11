@@ -1,0 +1,62 @@
+
+<h1>Pets!</h1>
+
+<h2>Pets that are not sleepy!</h2>
+{{pet}}
+<ul>
+  {{#each pets}}
+    {{#unless sleepy}}
+		<li>
+			{{petName}}
+
+			<button class="change-sleep" data-id="{{this.id}}" data-newsleep="1">
+				WAKE UP!
+			</button>
+
+			<button class="delete-pet" data-id="{{this.id}}">DELETE!</button>
+		</li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Pets that are sleepy!</h2>
+
+<ul>
+  {{#each pets}}
+    {{#if sleepy}}
+     <li>
+		{{petName}}
+
+		<button class="change-sleep" data-id="{{this.id}}" data-newsleep="0">
+			SLEEP TIME!
+		</button>
+
+		<button class="delete-pet" data-id="{{this.id}}">DELETE!</button>
+	</li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Pet</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Pet Name:</label>
+    <input type="text" id="pet-name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="ca">Pet Type:</label>
+    <input type="text" id="pet-type" name="type">
+  </div>
+  <div class="form-group">
+    <label for="ca">User ID: </label>
+    <input type="text" id="userID" name="userID">
+  </div>
+  <div class="form-group">
+    <label for="slee">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
+  </div>
+
+  <button type="submit">Add Pet</button>
+</form>

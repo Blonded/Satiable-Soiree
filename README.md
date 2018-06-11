@@ -25,6 +25,8 @@ Launch Satiable-Soiree [here!](URL HERE)
 * [Bootstrap](https://getbootstrap.com/) - Website Framework
 * [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) - API Website for Recipes
 * [Heroku](https://heroku.com) - Platform Service to launch site
+* [Bulma](https://bulma.io/) - Website Framework
+* [Switchery](http://abpetkov.github.io/switchery/) - jQuery Plug-in
 
 
 ## Authors 🖋

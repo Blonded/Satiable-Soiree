@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (pet.js) to use its database functions.
-var user = require("../models/users.js");
+var user = require("../models/user.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {

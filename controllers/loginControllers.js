@@ -14,7 +14,7 @@ router.post("/", function(req, res) {
             res.text('not found');
         } else {
             sessionStorage.setItem('logged', true);
-            sessionStorage.setItem('token', md5(result.dataValues.email));
+            sessionStorage.setItem('id', result.dataValues.id);
             console.log(result.dataValues.firstname);
             res.json(result);
         }

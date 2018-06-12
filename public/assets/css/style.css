@@ -75,3 +75,12 @@ margin-top: 60px;
 
 
 /* _____________________________________________ */
+/* EVENT Page */
+
+#event-background {
+    background: url("../img/liana-mikah-393893-unsplash.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

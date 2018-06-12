@@ -10,6 +10,14 @@ router.get("/", function(req, res) {
   res.render("index");
 });
 
+router.get("/signup", function(req, res) {
+  res.render("signup");
+});
+
+router.get("/login", function(req, res) {
+  res.render("login");
+});
+
 router.post("/api/pets", function(req, res) {
   console.log("inside the post")
   pet.create([

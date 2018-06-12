@@ -14,7 +14,7 @@ router.get("/createprofile", function(req, res) {
   res.render("createprofile");
 });
 
-router.get("/login", function(req, res) {
+router.get("/login/", function(req, res) {
   res.render("login");
 });
 

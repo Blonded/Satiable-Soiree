@@ -1,4 +1,11 @@
+/* index */
 
+.started {
+  background-color: brown;
+  border-color: crimson;
+  padding: .99rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
 /* backgroud */
 
@@ -12,6 +19,7 @@
 
 
 .picnic {
+  padding: 5%;
   min-height: 800px;
   height: auto; 
 }
@@ -28,8 +36,6 @@
   height: 60px;
   padding: 25px;
 }
-
-
 
 
 /* LOGIN.handlebars CSS */

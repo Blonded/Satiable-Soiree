@@ -1,3 +1,23 @@
-<p> This is the event page, where the user can create an event.
+{{!-- This is the event page, where the user can create an event.
   Listing the time, location, friends, event name and using the API Key to generate random
-  recipes onto the page. Etc.  </p>
+  recipes onto the page. Etc. --}}
+ {{!--Every Page will have this - this is index --}} 
+ 
+ {{> nav/nav-block}}
+
+<div class="card">
+  <div id="body" class="picnic">
+    <header class="masthead text-center text">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">Create Meaningful Events with your friends</h1>
+          <h2 class="masthead-subheading mb-0">Everyone participates!</h2>
+
+          <a href="/createprofile/" class="btn btn-primary btn-xl rounded-pill mt-5 started">Get Started!</a>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+{{> footer/footer-block}}

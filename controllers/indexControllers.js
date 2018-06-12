@@ -23,6 +23,7 @@ router.get("/usernav", function(req, res) {
 });
 
 
+
 router.post("/api/pets", function(req, res) {
   console.log("inside the post")
   pet.create([
@@ -54,7 +55,7 @@ router.put("/api/pets/:id", function(req, res) {
 });
 
 router.delete("/api/pets/:id", function(req, res) {
-  
+
   var condition = "id = " + req.params.id;
 
   pet.delete(condition, function(result) {

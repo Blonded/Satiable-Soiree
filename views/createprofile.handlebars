@@ -1,78 +1,81 @@
-<p> this is your 'CREATE' profile</p>
+{{!-- <p> this is your 'CREATE' profile</p> --}}
 
+{{> nav/nav-block}}
 
-<div class = "container-createprofile">
-<!-- <div class= "card-body-newprofile row justify-content-center"> -->
-
-  <form>
-    <div class="form-group row">
-
-<!-- EMAIL -->
-
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-      </div>
-    </div>
-<!-- PASSWORD -->
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-      </div>
-    </div>
-</form>
-  <!-- First name -->
-
-  <!-- Last name -->
-
-  <!-- CHECKBOX -->
-  <div class="form-group row">
-    <div class="col-sm-2">Checkbox</div>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-          Example checkbox
-        </label>
-
-        <input class="form-check-input" type="checkbox" id="gridCheck2">
-        <label class="form-check-label" for="gridCheck2">
-          Example checkbox
-        </label>
-
-        <input class="form-check-input" type="checkbox" id="gridCheck3">
-        <label class="form-check-label" for="gridCheck3">
-          Example checkbox
-        </label>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-<!-- _____________________________ -->
-<!-- _____________________________ -->
-
-<!-- Diet:  -->
-
-
-
-
-
-
-<button class="btn btn-secondary btn-createprofile">Create Profile</button>
-
-
+<form>
 
 
 </form>
-<!-- Closes form -->
-<!-- </div> -->
-<!-- ^ Closes card-body -->
+
+    <div class="container-createprofile card" id="createprofile">
+    <!-- <div class= "card-body-newprofile row justify-content-center"> -->
+
+    <form>
+            <!-- EMAIL -->
+        <div class="form-group">
+            <div class="form-group createprofile">
+                <label for="exampleInputEmail1">Email address</label>
+                <span><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></span>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        
+        <!-- PASSWORD -->
+            <div class="form-group createprofile">
+                <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <span><input type="password" class="form-control" id="inputPassword3" placeholder="Password"></input></span>
+                    </div>
+            </div>
+        </div>
+    <!-- First name -->
+
+    <!-- Last name -->
+
+    <!-- CHECKBOX -->
+    <div class="form-group row">
+        <div class="col-sm-2">Checkbox</div>
+        <div class="col-sm-10">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+            </label>
+
+            <input class="form-check-input" type="checkbox" id="gridCheck2">
+            <label class="form-check-label" for="gridCheck2">
+            Example checkbox
+            </label>
+
+            <input class="form-check-input" type="checkbox" id="gridCheck3">
+            <label class="form-check-label" for="gridCheck3">
+            Example checkbox
+            </label>
+        </div>
+        </div>
+    </div>
 
 
 
-</div>
+
+
+    <!-- _____________________________ -->
+    <!-- _____________________________ -->
+
+    <!-- Diet:  -->
+
+
+    <button class="btn btn-secondary btn-createprofile">Update Profile</button>
+
+
+
+
+    </form>
+    <!-- Closes form -->
+    <!-- </div> -->
+    <!-- ^ Closes card-body -->
+
+
+
+    </div>
+
+{{> footer/footer-block}}

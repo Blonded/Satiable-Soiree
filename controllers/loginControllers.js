@@ -11,11 +11,8 @@ router.post("/", function(req, res) {
     db.User.findOne({ where: {email: req.body.email, password: md5(req.body.password)} }).then(function(result) {
         
         if (!result) {
-            res.text('not found');
+            res.json(false);
         } else {
-            sessionStorage.setItem('logged', true);
-            sessionStorage.setItem('id', result.dataValues.id);
-            console.log(result.dataValues.firstname);
             res.json(result);
         }
      });

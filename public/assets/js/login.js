@@ -15,8 +15,25 @@ $(document).ready(function() {
         type: "POST",
         data: newLogin
       }).then(
-        function() {
-          console.log("New login");
+        function(result) {
+          
+            if(result) {
+                console.log("21",result);
+                window.sessionStorage.setItem('logged', true);
+                window.sessionStorage.setItem('id', result.id);
+                window.sessionStorage.setItem('firstname', result.firstname);
+                window.sessionStorage.setItem('lastname', result.lastname);
+                window.sessionStorage.setItem('email', result.email);
+                window.sessionStorage.setItem('password', result.password);
+                window.sessionStorage.setItem('allergies', result.allergies);
+
+                window.location.href = '/usernav/';
+
+            } else {
+
+                $('#myModal').modal('show');
+
+            }
           // Reload the page to get the updated list
         //   location.reload();
         }

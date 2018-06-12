@@ -22,6 +22,9 @@ router.get("/usernav", function(req, res) {
   res.render("usernav");
 });
 
+router.get("/event", function (req, res) {
+  res.render("event");
+});
 
 
 router.post("/api/pets", function(req, res) {

@@ -27,7 +27,7 @@ router.get("/event", function (req, res) {
 });
 
 
-router.post("/api/pets", function(req, res) {
+router.post("/api/logout", function(req, res) {
   console.log("inside the post")
   pet.create([
     "name", "species","sleepy", "userID"

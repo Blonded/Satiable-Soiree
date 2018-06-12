@@ -4,6 +4,8 @@ function isUserLogged() {
 
         $(".navbar-guest").hide();
         $(".navbar-user").show();
+
+        $(".welcome").html("<span class='nav-link'><b>Welcome "+window.sessionStorage.getItem("firstname")+"</b></span>");
         return true;
 
     }
@@ -17,6 +19,22 @@ function isUserLogged() {
 $(document).ready(function() {
 
     isUserLogged();
+
+    $(".btn-logout").on("click", function(event) {
+
+        event.preventDefault();
+
+        window.sessionStorage.removeItem('logged');
+        window.sessionStorage.removeItem('id');
+        window.sessionStorage.removeItem('firstname');
+        window.sessionStorage.removeItem('lastname');
+        window.sessionStorage.removeItem('email');
+        window.sessionStorage.removeItem('password');
+        window.sessionStorage.removeItem('allergies');
+
+        window.location.href = '/';
+
+    });
 
 });
 

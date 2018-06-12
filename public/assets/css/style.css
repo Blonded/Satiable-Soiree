@@ -1,7 +1,27 @@
+
+
+/* backgroud */
+
+#body {
+  background: url("../img/ben-duchac-66002-unsplash.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.picnic {
+  min-height: 800px;
+  height: auto; 
+}
+
 /* footer */
 
 .footer {
-  margin-top: 1%;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
   background-color: rgb(196, 196, 196);
   text-align: center;
   font-size: 10px;

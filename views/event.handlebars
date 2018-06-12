@@ -3,21 +3,46 @@
   recipes onto the page. Etc. --}}
  {{!--Every Page will have this - this is index --}} 
  
- {{> nav/nav-block}}
-
-<div class="card">
-  {{!-- Are you going? --}} 
-  {{!-- Who will be going? --}}
-</div>
-
-<div class="card">
-{{!-- form for displaying event restrictions --}}
-</div>
-
-<div class="card">
-  {{!-- form for user to type in their dish --}}
-</div>
 
 
+<body id="event-background">
 
-{{> footer/footer-block}}
+  <div class="card createprofile" style="background-color: rgb(213, 233, 226, 0.555);">
+    
+    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
+        {{!-- Are you going? --}}
+          <form class="form-inline">
+            <label class="row my-2 ml-5 mr-5" for="inlineFormCustomSelectPref">Will you attend? </label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option value="1">YES</option>
+              <option value="2">NO</option>
+            </select>
+          </form>
+    </div>
+
+    <div class = "row ml-5 mr-5" >
+    {{!-- Who will be going? --}}
+      {{> user/user-block}}
+      {{> user/user-block}}
+      {{> user/user-block}}
+    </div>
+
+    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">      
+    {{!-- form for displaying event restrictions --}}
+
+    </div>
+
+
+
+
+
+
+    {{!-- form for user to type in their dish --}}
+
+
+
+  </div>
+
+        
+
+</body>

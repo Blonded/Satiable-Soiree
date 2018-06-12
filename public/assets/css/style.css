@@ -1,3 +1,43 @@
+/* index */
+
+.started {
+  background-color: brown;
+  border-color: crimson;
+  padding: .99rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* backgroud */
+
+#body {
+  background: url("../img/ben-duchac-66002-unsplash.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.picnic {
+  padding: 5%;
+  min-height: 800px;
+  height: auto; 
+}
+
+/* footer */
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  background-color: rgb(196, 196, 196);
+  text-align: center;
+  font-size: 10px;
+  height: 60px;
+  padding: 25px;
+}
+
+
 /* LOGIN.handlebars CSS */
 
 .login {

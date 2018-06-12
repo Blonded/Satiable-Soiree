@@ -22,10 +22,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     zipcode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [5]
       }
     },
     city: {
@@ -47,7 +47,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TIME,
       allowNull: false
     },
-  });
+  }, {
+		  timestamps: false
+    });
 
   Occasion.associate = function(models) {
     Occasion.hasMany(models.Food, {

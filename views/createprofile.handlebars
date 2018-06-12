@@ -1,38 +1,53 @@
 <p> this is your 'CREATE' profile</p>
 
-<div class = "container-createprofile">
 
+<div class = "container-createprofile">
+<!-- <div class= "card-body-newprofile row justify-content-center"> -->
+
+  <form>
+    <div class="form-group row">
+
+<!-- EMAIL -->
+
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+<!-- PASSWORD -->
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+</form>
   <!-- First name -->
 
   <!-- Last name -->
 
+  <!-- CHECKBOX -->
+  <div class="form-group row">
+    <div class="col-sm-2">Checkbox</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
 
-<!-- Email -->
-<form class="needs-validation form-login">
-  <div class="form-row">
-    <div class="col-md-6 mb-2">
-      <label for="validationCustom01">Email:</label>
-      <input type="text" class="form-control" id="email" placeholder="Email" value="" required>
-      <div class="valid-feedback">
-        Looks good!
+        <input class="form-check-input" type="checkbox" id="gridCheck2">
+        <label class="form-check-label" for="gridCheck2">
+          Example checkbox
+        </label>
+
+        <input class="form-check-input" type="checkbox" id="gridCheck3">
+        <label class="form-check-label" for="gridCheck3">
+          Example checkbox
+        </label>
       </div>
     </div>
   </div>
-  <!-- //row -->
-
-  <!-- Password -->
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom02">Password:</label>
-      <input type="text" class="form-control" id="password" placeholder="Password" value="" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-  </div>
-  <!-- // row -->
-
-
 
 
 
@@ -42,82 +57,22 @@
 <!-- _____________________________ -->
 
 <!-- Diet:  -->
-<p>DIET:</p>
-
-<div class="input-group mb-2">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox">
-</div>
 
 
 
-<button class="btn btn-secondary btn-login">Log in</button>
+
+
+
+<button class="btn btn-secondary btn-createprofile">Create Profile</button>
 
 
 
 
 </form>
 <!-- Closes form -->
-
+<!-- </div> -->
+<!-- ^ Closes card-body -->
 
 
 
 </div>
-<!-- ^ Div closes container -->
-
-
-<!-- JS For validation on email/pw -->
-<!-- <script>
-$(".btn-login").on("click", function(event) {
-  // Make sure to preventDefault on a submit event.
-  event.preventDefault();
-
-  var newLogin = {
-    email: $("#email").val().trim(),
-    password: $("#password").val().trim()
-  };
-
-  // Send the POST request.
-  $.ajax("/login", {
-    type: "POST",
-    data: newLogin
-  }).then(
-    function() {
-      console.log("New login");
-      // Reload the page to get the updated list
-    //   location.reload();
-    }
-  );
-});
-
-});
-
-</script> -->

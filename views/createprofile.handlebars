@@ -2,15 +2,40 @@
 
 <div class = "container-createprofile">
 
+  <!-- First name -->
 
-<!-- Name -->
-<!-- First name -->
+  <!-- Last name -->
 
-<!-- Last name -->
 
 <!-- Email -->
+<form class="needs-validation form-login">
+  <div class="form-row">
+    <div class="col-md-6 mb-2">
+      <label for="validationCustom01">Email:</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" value="" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+  <!-- //row -->
 
-<!-- Password -->
+  <!-- Password -->
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom02">Password:</label>
+      <input type="text" class="form-control" id="password" placeholder="Password" value="" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+  <!-- // row -->
+
+
+
+
+
 
 
 <!-- _____________________________ -->
@@ -54,15 +79,45 @@
 
 
 
+<button class="btn btn-secondary btn-login">Log in</button>
 
 
 
 
-
-
+</form>
+<!-- Closes form -->
 
 
 
 
 </div>
 <!-- ^ Div closes container -->
+
+
+<!-- JS For validation on email/pw -->
+<!-- <script>
+$(".btn-login").on("click", function(event) {
+  // Make sure to preventDefault on a submit event.
+  event.preventDefault();
+
+  var newLogin = {
+    email: $("#email").val().trim(),
+    password: $("#password").val().trim()
+  };
+
+  // Send the POST request.
+  $.ajax("/login", {
+    type: "POST",
+    data: newLogin
+  }).then(
+    function() {
+      console.log("New login");
+      // Reload the page to get the updated list
+    //   location.reload();
+    }
+  );
+});
+
+});
+
+</script> -->

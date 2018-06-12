@@ -1,81 +1,102 @@
 {{!-- <p> this is your 'CREATE' profile</p> --}}
 
-{{> nav/nav-block}}
-
-<form>
 
 
-</form>
-
-    <div class="container-createprofile card" id="createprofile">
-    <!-- <div class= "card-body-newprofile row justify-content-center"> -->
-
-    <form>
-            <!-- EMAIL -->
-        <div class="form-group">
-            <div class="form-group createprofile">
-                <label for="exampleInputEmail1">Email address</label>
-                <span><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></span>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-        
-        <!-- PASSWORD -->
-            <div class="form-group createprofile">
-                <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <span><input type="password" class="form-control" id="inputPassword3" placeholder="Password"></input></span>
-                    </div>
-            </div>
-        </div>
-    <!-- First name -->
-
-    <!-- Last name -->
-
-    <!-- CHECKBOX -->
-    <div class="form-group row">
-        <div class="col-sm-2">Checkbox</div>
-        <div class="col-sm-10">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
-            <label class="form-check-label" for="gridCheck1">
-            Example checkbox
-            </label>
-
-            <input class="form-check-input" type="checkbox" id="gridCheck2">
-            <label class="form-check-label" for="gridCheck2">
-            Example checkbox
-            </label>
-
-            <input class="form-check-input" type="checkbox" id="gridCheck3">
-            <label class="form-check-label" for="gridCheck3">
-            Example checkbox
-            </label>
-        </div>
-        </div>
-    </div>
+<header class="masthead text-center text">
+    <div class="container" id="createprofile">
 
 
+      <div class ="card" style="width: 75rem;">
+      <div class= "card card-body">
+
+      <form class = "createinput">
+
+<h2> Please input your information below: </h2>
+<hr>
+<!-- Name -->
+<!-- First name -->
+<div class="form-row">
+  <div class="form-group col-md-12">
+    <label for="firstName">First Name: </label>
+    <input type="text" class="form-control-cp" placeholder="First name">
+  </div>
+</div>
+<!-- Last name -->
+  <div class= "form-row">
+  <div class="form-group col-md-12">
+    <label for="lastName">Last Name: </label>
+    <input type="text" class="form-control-cp" placeholder="Last name">
+  </div>
+</div>
+<!-- Email -->
+<div class="form-row">
+  <div class="form-group col-lg-12">
+    <label for="email">Email: </label>
+<input type="text" class="form-control-cp" placeholder="Email">
+  </div>
+</div>
 
 
-
-    <!-- _____________________________ -->
-    <!-- _____________________________ -->
-
-    <!-- Diet:  -->
-
-
-    <button class="btn btn-secondary btn-createprofile">Update Profile</button>
-
+<!-- Password -->
+<div class="form-row">
+  <div class="form-group col-lg-12">
+    <label for="password">Password: </label>
+<input type="text" class="form-control-cp" placeholder="Password">
+  </div>
+</div>
 
 
+<!-- diet -->
+<h2> Diet: </h2>
+<hr>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">Vegetarian</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+  <label class="form-check-label" for="inlineCheckbox3">Pescetarian</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+  <label class="form-check-label" for="inlineCheckbox3">None</label>
+</div>
 
-    </form>
-    <!-- Closes form -->
-    <!-- </div> -->
-    <!-- ^ Closes card-body -->
+
+</div>
+<!-- diet div close -->
 
 
 
-    </div>
 
-{{> footer/footer-block}}
+
+
+
+
+
+
+
+
+
+<!-- Button to creat new profile -->
+ <button type="btn-createprofile" class="btn btn-secondary"> Create Profile </button>
+
+      </form>
+
+
+
+</div>
+<!-- closes card body -->
+
+</div>
+<!-- closes card -->
+</div>
+<!-- closes container -->
+
+
+
+</header>

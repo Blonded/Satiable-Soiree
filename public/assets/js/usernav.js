@@ -14,7 +14,7 @@ function getOccasions(userId) {
     $.get("/api/usernav", {id: userId}, function(data) {
       
       console.log("Occasions", data);
-      posts = data;
+      var posts = data;
 
       for (let index = 0; index < posts.length; index++) {
 

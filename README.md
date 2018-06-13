@@ -23,11 +23,11 @@ Launch Satiable-Soiree [here!](URL HERE)
 * [jQuery](https://jquery.com/) - Javascript Library
 * [MySQL](https://www.mysql.com/) - Open Source Database
 * [Bootstrap](https://getbootstrap.com/) - Website Framework
-* [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) - API Website for Recipes
 * [Heroku](https://heroku.com) - Platform Service to launch site
 * [Bulma](https://bulma.io/) - Website Framework
 * [Switchery](http://abpetkov.github.io/switchery/) - jQuery Plug-in
 
+* [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) - API Website for Recipes
 
 ## Authors 🖋
 
@@ -37,4 +37,4 @@ Launch Satiable-Soiree [here!](URL HERE)
 
 ## Acknowledgments 🗣
 
-Coming soon.
+* **TyperJs** [TyperJS - Library] (https://steven.codes/typerjs/)

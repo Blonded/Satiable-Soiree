@@ -81,7 +81,7 @@ margin-right: auto;
 }
 
 /* button login */
-.btn-secondary {
+#login-btn {
   margin-bottom: 40px;
 }
 

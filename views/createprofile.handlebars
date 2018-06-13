@@ -2,7 +2,7 @@
 
 
 
-<header class="head text-left text">
+<div class="head text-left text">
     <div class="container" id="createprofile">
 
 
@@ -18,21 +18,21 @@
 <div class="form-row">
   <div class="form-group col-md-12">
     <label for="firstName">First Name: </label>
-    <input type="text" class="form-control-cp" placeholder="First name">
+    <input type="text" class="form-control-cp" id="firstname" placeholder="First name">
   </div>
 </div>
 <!-- Last name -->
   <div class= "form-row">
   <div class="form-group col-md-12">
     <label for="lastName">Last Name: </label>
-    <input type="text" class="form-control-cp" placeholder="Last name">
+    <input type="text" class="form-control-cp" id="lastname" placeholder="Last name">
   </div>
 </div>
 <!-- Email -->
 <div class="form-row">
   <div class="form-group col-md-12">
     <label for="email">Email: </label>
-<input type="text" class="form-control-cp" placeholder="Email">
+<input type="text" class="form-control-cp" id="email" placeholder="Email">
   </div>
 </div>
 
@@ -41,7 +41,7 @@
 <div class="form-row">
   <div class="form-group col-md-12">
     <label for="password">Password: </label>
-<input type="text" class="form-control-cp" placeholder="Password">
+<input type="password" class="form-control-cp" id="password" placeholder="Password">
   </div>
 </div>
 
@@ -50,20 +50,20 @@
 <h2> Diet: </h2>
 <hr>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <input class="form-check-input" type="checkbox" name="diet" id="inlineCheckbox1" value="Vegan">
   <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <input class="form-check-input" type="checkbox" name="diet" id="inlineCheckbox2" value="Vegetarian">
   <label class="form-check-label" for="inlineCheckbox2">Vegetarian</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+  <input class="form-check-input" type="checkbox" name="diet" id="inlineCheckbox3" value="Pescetarian">
   <label class="form-check-label" for="inlineCheckbox3">Pescetarian</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-  <label class="form-check-label" for="inlineCheckbox3">None</label>
+  <input class="form-check-input" type="checkbox" name="diet" id="inlineCheckbox4" value="None">
+  <label class="form-check-label" for="inlineCheckbox4">None</label>
 </div>
 <!-- diet div closes -->
 
@@ -77,78 +77,78 @@
 <div class="row">
   <div class="button-box col-4">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="dairy" id="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="dairy" id="defaultCheck1">
     <label class="form-check-label" for="defaultCheck1">
       Dairy
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="gluten" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="gluten" id="defaultCheck2">
+    <label class="form-check-label" for="defaultCheck2">
       Gluten
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="grains" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="grains" id="defaultCheck3">
+    <label class="form-check-label" for="defaultCheck3">
       Grains
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="peanut" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="peanut" id="defaultCheck4">
+    <label class="form-check-label" for="defaultCheck4">
       Peanut
     </label>
   </div>
   </div>
   <div class="button-box col-4">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="seafood" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="seafood" id="defaultCheck5">
+    <label class="form-check-label" for="defaultCheck5">
       Seafood
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="sesame" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="sesame" id="defaultCheck6">
+    <label class="form-check-label" for="defaultCheck6">
       Sesame
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="shellfish" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="shellfish" id="defaultCheck7">
+    <label class="form-check-label" for="defaultCheck7">
       Shellfish
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="soy" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="soy" id="defaultCheck8">
+    <label class="form-check-label" for="defaultCheck8">
       Soy
     </label>
   </div>
   </div>
   <div class="button-box col-4">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="treenut" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="treenut" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
       Tree Nut
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="wheat" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="wheat" id="defaultCheck10">
+    <label class="form-check-label" for="defaultCheck10">
       Wheat
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="egg" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="egg" id="defaultCheck11">
+    <label class="form-check-label" for="defaultCheck11">
       Egg
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="none" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
+    <input class="form-check-input" type="checkbox" name="diet" value="none" id="defaultCheck12">
+    <label class="form-check-label" for="defaultCheck12">
       N/A
     </label>
   </div>
@@ -160,7 +160,7 @@
 
 
   <!-- Button to creat new profile -->
-   <button type="btn-createprofile" class="btn btn-secondary"> Create Profile </button>
+   <button id="btn-createprofile" class="btn btn-secondary"> Create Profile </button>
         </form>
 
   </div>
@@ -180,4 +180,66 @@
 
 
 
-</header>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Error</h5>
+      </div>
+      <div class="modal-body text-center">
+          <p>That e-mail already exists in our database. Please try a new one or go to login page.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" href="/login/" data-dismiss="modal">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Error</h5>
+      </div>
+      <div class="modal-body text-center">
+          <p>E-mail ok!.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Error</h5>
+      </div>
+      <div class="modal-body text-center">
+          <p>Invalid e-mail!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Error</h5>
+      </div>
+      <div class="modal-body text-center">
+          <p>Invalid e-mail!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/user.js"></script>

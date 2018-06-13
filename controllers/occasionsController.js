@@ -10,16 +10,6 @@ router.get("/", function(req, res) {
   res.render("index");
 });
 
-router.get("/api/usernav", function(req, res) {
-  
-  var userId = req.body.userid;
-
-  db.Occasion.findAll
-
-
-
-});
-
 router.post("/api/pets", function(req, res) {
   console.log("inside the post")
   pet.create([

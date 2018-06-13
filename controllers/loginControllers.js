@@ -16,15 +16,7 @@ router.post("/", function(req, res) {
             res.json(result);
         }
      });
-      
-    // pet.create([
-    //   "name", "species","sleepy", "userID"
-    // ], [
-    //   req.body.name, req.body.species, req.body.sleepy, req.body.userID
-    // ], function(result) {
-    //   // Send back the ID of the new quote
-    //   res.json({ id: result.insertId });
-    // });
+
   });
 
 module.exports = router;

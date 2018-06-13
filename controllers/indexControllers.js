@@ -83,7 +83,24 @@ router.post("/api/createprofile", function(req, res) {
 
     });
 
-  });
+});
+
+router.post("/api/createevent", function(req, res) {
+
+  db.User.create(
+    {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      allergies: req.body.allergies,
+      email: req.body.email,
+      password: md5(req.body.password)
+    }).then(function(result) {
+
+      res.json(result);
+
+    });
+
+});
 
 
 router.post("/api/logout", function(req, res) {

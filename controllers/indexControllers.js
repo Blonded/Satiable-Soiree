@@ -22,12 +22,35 @@ router.get("/usernav", function(req, res) {
   res.render("usernav");
 });
 
+// router.get("/usernav", function(req, res) {
+//   res.render("usernav");
+// });
+
 router.get("/eventdetails", function(req, res) {
   res.render("eventdetails");
 });
 
 router.get("/event", function (req, res) {
   res.render("event");
+});
+
+router.get("/api/usernav", function(req, res) {
+
+  console.log('trying to get posts');
+    var query = {};
+    query['id'] = req.query.id;
+
+    // 1. Add a join here to include all of the Authors to these posts
+    db.Occasion.findAll({
+      include: [{
+        where: query,
+        model: db.User,
+      }]
+    }).then(function(occasions) {
+      res.json(occasions);
+      
+    });
+
 });
 
 

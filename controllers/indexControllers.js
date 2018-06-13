@@ -108,15 +108,12 @@ router.post("/api/createevent", function(req, res) {
 });
 
 
-router.post("/api/logout", function(req, res) {
-  console.log("inside the post")
-  pet.create([
-    "name", "species","sleepy", "userID"
-  ], [
-    req.body.name, req.body.species, req.body.sleepy, req.body.userID
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+router.get("/event/:eventid", function(req, res) {
+  
+  db.Occasion.findOne({where: {id: req.params.eventid}}).then(function(result) {
+    console.log(result.dataValues);
+    res.render("event", { result: result.dataValues});
+
   });
 });
 

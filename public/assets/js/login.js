@@ -18,7 +18,7 @@ $(document).ready(function() {
         function(result) {
           
             if(result) {
-                console.log("21",result);
+                
                 window.sessionStorage.setItem('logged', true);
                 window.sessionStorage.setItem('id', result.id);
                 window.sessionStorage.setItem('firstname', result.firstname);

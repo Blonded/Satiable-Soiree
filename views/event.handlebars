@@ -1,16 +1,17 @@
  
 <body id="event-background">
-
+{{result.street}}
 <div class="card-body" id="event" style="background-color: rgb(235, 235, 235);">
   <div class="card">
     <br>
+    <h1>{{result.id}}</h1>
         {{!-- event info --}}
-        <div class="card-body" data-id="{{id}}">
-          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name">Event Name</h4>
+        <div class="card-body" data-id="{{result.id}}">
+          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name"></h4>
         </div>
         <div class="card ml-5 mr-5 p-4">
                 <span class="row ml-3">
-                  <div class="ml-2" type="text" id="number">number</div>
+                  <div class="ml-2" type="text" id="number">{{result.number}}</div>
                   <div class="ml-2" type="text" id="street">street</div>
                   <div class="ml-2" type="text" id="city">city</div>
                   <div class="ml-2" type="text" id="zipcode">zipcode</div>

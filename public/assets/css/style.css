@@ -37,13 +37,33 @@
 }
 
 /* LOGIN.handlebars CSS */
+/* __________________________________ */
 
 .login {
 margin-top: 60px;
+width: 60%;
+margin-left: auto;
+margin-right: auto;
 }
 
+#card-login{
+  background-color: white;
+  margin-top: 80px;
+  height: 50%;
+}
 .card-body-login {
   margin-top: 50px;
+}
+
+#login-background{
+  background: url("http://i65.tinypic.com/fav8xx.jpg");
+  background-size:cover;
+
+}
+
+/* button login */
+.btn-secondary {
+  margin-bottom: 40px;
 }
 
 /* __________________________________________ */
@@ -93,4 +113,3 @@ margin-top: 60px;
   padding: .99rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-

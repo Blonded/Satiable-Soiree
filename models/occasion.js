@@ -51,9 +51,17 @@ module.exports = function(sequelize, DataTypes) {
 		  timestamps: false
     });
 
+  Occasion.associate = function(user) {
+    Occasion.belongsTo(user.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   Occasion.associate = function(models) {
     Occasion.hasMany(models.Food, {
-      onDelete: "cascade"
+      onDelete: "CASCADE"
     });
   };
 

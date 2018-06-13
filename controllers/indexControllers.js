@@ -87,13 +87,18 @@ router.post("/api/createprofile", function(req, res) {
 
 router.post("/api/createevent", function(req, res) {
 
-  db.User.create(
+  db.Occasion.create(
     {
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      allergies: req.body.allergies,
-      email: req.body.email,
-      password: md5(req.body.password)
+      name: req.body.name,
+      street: req.body.street,
+      number: req.body.number,
+      zipcode: req.body.zipcode,
+      city: req.body.city,
+      date: req.body.date,
+      starttime: req.body.starttime,
+      endtime: req.body.endtime,
+      UserId: req.body.UserId,
+      
     }).then(function(result) {
 
       res.json(result);

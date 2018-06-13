@@ -3,21 +3,22 @@
   recipes onto the page. Etc. --}}
  {{!--Every Page will have this - this is index --}} 
  
-
-
 <body id="event-background">
 
-  <div class="card createprofile" style="background-color: rgb(213, 233, 226, 0.555);">
+  <div class="card" id="event" style="background-color: rgb(213, 233, 226, 0.555);">
     
-    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
+    <div class="card-body row" style="background-color: rgba(25, 185, 132, 0.555);">
         {{!-- Are you going? --}}
           <form class="form-inline">
-            <label class="row my-2 ml-5 mr-5" for="inlineFormCustomSelectPref">Will you attend? </label>
+            <label class="my-2 ml-5 mr-5" for="inlineFormCustomSelectPref">Will you attend? </label>
             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
               <option value="1">YES</option>
               <option value="2">NO</option>
             </select>
           </form>
+            <br>
+            <p class="when col-sm-4">When: </p>
+            <p class="where col-sm-4">Where: </p>
     </div>
 
     <div class = "row ml-5 mr-5" >
@@ -27,7 +28,8 @@
       {{> user/user-block}}
     </div>
 
-    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">      
+    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
+            <h4>See who else is going?</h4>
     {{!-- form for displaying event restrictions --}}
 
     </div>

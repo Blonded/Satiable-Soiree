@@ -17,7 +17,6 @@
   background-size: cover;
 }
 
-
 .picnic {
   padding: 5%;
   min-height: 800px;
@@ -37,7 +36,6 @@
   padding: 25px;
 }
 
-
 /* LOGIN.handlebars CSS */
 
 .login {
@@ -46,7 +44,6 @@ margin-top: 60px;
 
 .card-body-login {
   margin-top: 50px;
-
 }
 
 /* __________________________________________ */
@@ -54,8 +51,8 @@ margin-top: 60px;
 
 .card card-body {
   margin-top: 50px;
-  width: 45%;
-  height: 50%;
+  /* width: 45%;
+  height: 50%; */
   padding-top: 40px;
 }
 
@@ -68,11 +65,6 @@ margin-top: 60px;
   margin-top: 60px;
 }
 
-#createprofile {
-
-}
-
-
 
 /* _____________________________________________ */
 /* EVENT Page */
@@ -84,3 +76,9 @@ margin-top: 60px;
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+#event {
+  margin: 5%;
+}
+

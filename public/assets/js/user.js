@@ -53,6 +53,7 @@ $(function() {
 
         } else {
 
+          $('#myModal2').modal('show');
           $("#btn-createprofile").removeClass("disabled");
 
         }
@@ -80,7 +81,7 @@ $(function() {
     var newUser = {
       firstname: $("#firstname").val().trim(),
       lastname: $("#lastname").val().trim(),
-      allergies: resultAllergies,
+      allergies: resultAllergies.join(', '),
       email: $("#email").val().trim(),
       password: $("#password").val().trim()
     };

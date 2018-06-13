@@ -1,4 +1,5 @@
 var express = require("express");
+var md5 = require("md5");
 
 var router = express.Router();
 
@@ -69,16 +70,20 @@ router.post("/api/checkExistingEmail", function(req, res) {
 
 router.post("/api/createprofile", function(req, res) {
 
-  db.User.create([
-    "firstname", "lastname","allergies", "email", "password"],
-    [
-      req.body.firstname, req.body.lastname, req.body.allergies, req.body.email, md5(req.body.password)
-    ], function(result) {
-    // Send back the ID of the new quote
-    res.json(result);
-  });
+  db.User.create(
+    {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      allergies: req.body.allergies,
+      email: req.body.email,
+      password: md5(req.body.password)
+    }).then(function(result) {
 
-});
+      res.json(result);
+
+    });
+
+  });
 
 
 router.post("/api/logout", function(req, res) {

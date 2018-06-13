@@ -7,35 +7,46 @@
 
   <div class="card" id="event" style="background-color: rgb(213, 233, 226, 0.555);">
     
-    <div class="card-body row" style="background-color: rgba(25, 185, 132, 0.555);">
+    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
         {{!-- Are you going? --}}
-          <form class="form-inline">
-            <label class="my-2 ml-5 mr-5" for="inlineFormCustomSelectPref">Will you attend? </label>
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <form class="form-inline row">
+            <label class="col-sm-2 my-2" for="inlineFormCustomSelectPref">Will you attend? </label>
+            <select class="col-sm-1 custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
               <option value="1">YES</option>
               <option value="2">NO</option>
             </select>
+            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Date:  </label><script>moment().format("MMM Do YYYY");</script>
+            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Start Time:  </label>
+            <label class="col-sm-2 " for="inlineFormCustomSelectPref">End Time: </label>
+            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Location: </label>
           </form>
-            <br>
+            {{!-- <br>
             <p class="when col-sm-4">When: </p>
-            <p class="where col-sm-4">Where: </p>
+            <p class="where col-sm-4">Where: </p> --}}
     </div>
 
     <div class = "row ml-5 mr-5" >
     {{!-- Who will be going? --}}
-      {{> user/user-block}}
-      {{> user/user-block}}
-      {{> user/user-block}}
+      
+      <div class="col-4">{{> user/user-block}}</div> 
+      <div class="col-4">{{> user/user-block}}</div>
+      <div class="col-4">{{> user/user-block}}</div>
     </div>
 
     <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
-            <h4>See who else is going?</h4>
+            <h4>What do you want to bring?</h4>
     {{!-- form for displaying event restrictions --}}
-
+      <div class="row ml-5 mr-5">
+        {{!-- Who will be going? --}}
+      
+        <div class="col-4">{{> food/food-block}}</div>
+        <div class="col-4">{{> food/food-block}}</div>
+        <div class="col-4">{{> food/food-block}}</div>
+      </div>
     </div>
 
 
-
+</div>
 
 
 
@@ -43,7 +54,7 @@
 
 
 
-  </div>
+
 
         
 

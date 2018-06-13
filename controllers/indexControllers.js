@@ -22,6 +22,10 @@ router.get("/usernav", function(req, res) {
   res.render("usernav");
 });
 
+router.get("/eventdetails", function(req, res) {
+  res.render("eventdetails");
+});
+
 router.get("/event", function (req, res) {
   res.render("event");
 });

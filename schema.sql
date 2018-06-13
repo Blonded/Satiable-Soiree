@@ -1,4 +1,0 @@
-
-DROP DATABASE IF EXISTS satiable;
-
-CREATE DATABASE satiable;

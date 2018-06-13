@@ -82,5 +82,15 @@ margin-top: 60px;
 
 
 #event {
+
   margin: 5%;
 }
+
+#event-submit {
+  height: 60px;
+  background-color: brown;
+  border-color: crimson;
+  padding: .99rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+

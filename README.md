@@ -1,5 +1,5 @@
 # Satiable-Soiree 🍱
-![logo](http://i63.tinypic.com/alt6pd.png)
+![logo](http://i63.tinypic.com/96gxeq.jpg)
 
 App for gathering friends in events with food.
 

@@ -3,11 +3,19 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (pet.js) to use its database functions.
-var pet = require("../models/occasion.js");
+var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   res.render("index");
+});
+
+router.get("/api/usernav/:userid", function(req, res) {
+  
+  var userId = req.params.userid;
+
+  
+
 });
 
 router.post("/api/pets", function(req, res) {

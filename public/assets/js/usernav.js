@@ -12,9 +12,9 @@ $(document).ready(function() {
         async:false,
       }).then(
         function(result) {
-          
+
             if(result) {
-                
+
                 console.log(window.sessionStorage.getItem("id"));
 
             } else {
@@ -29,10 +29,10 @@ $(document).ready(function() {
 });
 
 function getEvents(userId) {
-    
+
 
     $.get("/api/usernav" + userId, function(data) {
-      
+
         console.log("Occasions", data);
       posts = data;
       if (!posts || !posts.length) {

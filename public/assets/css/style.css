@@ -88,8 +88,8 @@ margin-top: 60px;
 
 #event-submit {
   height: 60px;
-  background-color: brown;
-  border-color: crimson;
+  background-color: rgb(121, 118, 118);
+  border-color:rgb(235, 235, 235);
   padding: .99rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }

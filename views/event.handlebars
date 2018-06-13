@@ -1,52 +1,52 @@
-{{!-- This is the event page, where the user can create an event.
-  Listing the time, location, friends, event name and using the API Key to generate random
-  recipes onto the page. Etc. --}}
- {{!--Every Page will have this - this is index --}} 
  
 <body id="event-background">
 
-  <div class="card" id="event" style="background-color: rgba(248, 146, 87, 0.555);">
-    
-    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
+<div class="card-body" id="event" style="background-color: rgb(235, 235, 235);">
+  <div class="card">
+    <br>
         {{!-- event info --}}
-        <h4 class="row">Event Information</h4>
-          <form class="form-inline row ml-2 mr-2">
-            <input type="text" class="col-sm-1 form-control col-sm-3 my-2" placeholder="event name"></input>
+        <div class="card-body" data-id="{{id}}">
+          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name">Event Name</h4>
+        </div>
+        <div class="card ml-5 mr-5 p-4">
+                <span class="row ml-3">
+                  <div class="ml-2" type="text" id="number">number</div>
+                  <div class="ml-2" type="text" id="street">street</div>
+                  <div class="ml-2" type="text" id="city">city</div>
+                  <div class="ml-2" type="text" id="zipcode">zipcode</div>
+                </span>
 
-            <label class="col-sm-1" for="end-time">end time: </label>
-            <input class="col-sm-1.5 form-control" id="endtime" type="time" name="appt-time" value="00:00">
+                <div class="card-body row m-2">
+                <div class="col-sm-3">
+                  <label for="start-time">start time: </label>
+                  <div id="starttime" type="time" name="appt-time" value="00:00">00:00 AM</div>
+                </div>
+                <div class="col-sm-3">
+                  <label for="end-time">end time: </label>
+                  <div id="endtime" type="time" name="appt-time" value="00:00">00:00 AM</div>
+                </div>
+                <div class="col-sm-3">
+                  <label for="date">date: </label>
+                  <div id="date" type="date" name="date" value=""></div>
+                </div>
+              </div>
 
-            <label class="col-sm-1" for="start-time">start time: </label>
-            <input class="col-sm-1.5 form-control" id="starttime" type="time" name="appt-time" value="00:00">
+              <div class="p-4">
+                <div class="form-row">
+                  <label class="col-sm-1.5 ml-2" for="food">What will you bring? : </label>
+                  <input class="col-sm-4" id="food" type="text" value=""></input>
+                  <div class="row ml-4" type="text" id="restrictions">Dietary Restrictions :</div>
+                  {{!--
+                  <label for="food">Food You will Bring: </label>
+                  <input id="food" type="text" value=""></input> --}}
+                </div>
+              
+              </div>
+          </div>
+  <br>
 
-            <label class="col-sm-1" for="date">date: </label>
-            <input class="col-sm form-control" id="date" type="date" name="date" value="">
-          </form>
-          <br>
-          {{!-- name, street, number, zipcode, city,  --}}
-          <form class="ml-2">
-            <div class="form-row">
-              <div class="col-2">
-                <input type="text" class="form-control" placeholder="Number">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Street">
-              </div>
-            </div>
-          </form>
-          <br>
-          <form class="ml-2">
-            <div class="form-row">
-              <div class="col-7">
-                <input type="text" class="form-control" placeholder="City">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Zip">
-              </div>
-            </div>
-          </form>
-  </div>
-  <h4 class="row ml-2">Who Is Going?</h4>
+
+  <h4 class="align-center row ml-5 mr-5 p-4" style="background-color: rgb(235, 235, 235);">Who Is Going?</h4>
         <div class = "row ml-5 mr-5" >
         {{!-- Who will be going? --}}
          
@@ -55,8 +55,8 @@
           <div class="col-4">{{> user/user-block}}</div>
         </div>
 
-    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
-            <h4 class="row">Will there be food?</h4>
+    
+  <h4 class="row ml-5 mr-5 p-4" style="background-color: rgb(235, 235, 235)">Foods</h4>
     {{!-- form for displaying event restrictions --}}
       <div class="row ml-5 mr-5">
         {{!-- Who will be going? --}}
@@ -66,23 +66,15 @@
         <div class="col-4">{{> food/food-block}}</div>
       </div>
     </div>
-    <br>
     
-    <button id="event-submit" type="submit-button" class="btn btn-outline">Update Event</button>
+    <br>
 
+    <button id="event-submit" type="submit-button" class="btn btn-outline m-5">Update Event</button>
+
+    <br>
     <br>
 
 
 </div>
-
-
-
-    {{!-- form for user to type in their dish --}}
-
-
-
-
-
-        
 
 </body>

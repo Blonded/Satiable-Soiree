@@ -5,13 +5,16 @@ $(function() {
         event.preventDefault();
 
         var dateInput = moment($("#date").val().trim());
-        console.log(dateInput.format("YYYY-MM-DD"));
+        console.log(dateInput);
+        console.log(dateInput.format("YYYY-MM-DD HH:mm:ss"));
 
-        var starttimeInput = moment($("#starttime").val().trim());
-        console.log($("#starttime").val());
+        var starttimeInput = moment($("#starttime").val(), "HH:mm:ss");
+        console.log("12", $("#starttime").val());
+        console.log(starttimeInput.format("HH:mm:ss"));
 
-        var endtimeInput = moment($("#endtime").val().trim());
-        console.log(endtimeInput.format("HH:mm:ss"));
+        var endtimeInput = moment($("#endtime").val());
+        console.log("15", $("#endtime").val());
+        console.log(endtimeInput);
 
         // var newEvent = {
         //     name: $("#name").val(),

@@ -15,7 +15,7 @@
               <option value="1">YES</option>
               <option value="2">NO</option>
             </select>
-            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Date:  </label>
+            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Date:  </label><script>moment().format("MMM Do YYYY");</script>
             <label class="col-sm-2 " for="inlineFormCustomSelectPref">Start Time:  </label>
             <label class="col-sm-2 " for="inlineFormCustomSelectPref">End Time: </label>
             <label class="col-sm-2 " for="inlineFormCustomSelectPref">Location: </label>
@@ -39,9 +39,9 @@
       <div class="row ml-5 mr-5">
         {{!-- Who will be going? --}}
       
-        <div class="col-4">{{> user/user-block}}</div>
-        <div class="col-4">{{> user/user-block}}</div>
-        <div class="col-4">{{> user/user-block}}</div>
+        <div class="col-4">{{> food/food-block}}</div>
+        <div class="col-4">{{> food/food-block}}</div>
+        <div class="col-4">{{> food/food-block}}</div>
       </div>
     </div>
 

@@ -6,40 +6,32 @@ $(document).ready(function() {
 
     }
 
-    $.ajax("/usernav", {
-        type: "GET",
-        data: {"id": window.sessionStorage.getItem("id")},
-        async:false,
-      }).then(
-        function(result) {
-          
-            if(result) {
-                
-                console.log(window.sessionStorage.getItem("id"));
-
-            } else {
-
-                $('#myModal').modal('show');
-
-            }
-          // Reload the page to get the updated list
-        //   location.reload();
-        }
-      );
+    getOccasions(window.sessionStorage.getItem("id"));
 });
 
-function getEvents(userId) {
+function getOccasions(userId) {
     
-
-    $.get("/api/usernav" + userId, function(data) {
+    $.get("/api/usernav", {id: userId}, function(data) {
       
-        console.log("Occasions", data);
+      console.log("Occasions", data);
       posts = data;
-      if (!posts || !posts.length) {
-        displayEmpty();
+
+      for (let index = 0; index < posts.length; index++) {
+        
+        var block = "";
+        block += "<div class='col'>";
+          block +="<h2>"+posts[index].name+"</h2>";
+          block +="<ul>";
+            block +="<li>Address: "+posts[index].street+", </li>";
+            block +="<li>"+posts[index].city+"</li>";
+            block +="<li>"+posts[index].city+"</li>";
+          block +="</ul>";
+          block +="</div>"
+          block +="</div>";
+        console.log(posts[index].name);
+        
       }
-      else {
-        initializeRows();
-      }
+
+      
     });
   }

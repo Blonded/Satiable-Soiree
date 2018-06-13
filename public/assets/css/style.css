@@ -1,11 +1,18 @@
 /* index */
 
 .started {
+  margin-bottom: 30px;
   background-color: brown;
   border-color: crimson;
   padding: .99rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+#index-card{
+/* opacity: 0.33; */
+}
+
+
 
 /* background */
 
@@ -32,8 +39,6 @@
   background-color: rgb(196, 196, 196);
   text-align: center;
   font-size: 10px;
-  height: 60px;
-  padding: 25px;
 }
 
 /* LOGIN.handlebars CSS */
@@ -102,7 +107,6 @@ margin-right: auto;
 
 
 #event {
-
   margin: 5%;
 }
 

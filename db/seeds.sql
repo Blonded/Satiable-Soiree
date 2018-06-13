@@ -1,16 +1,56 @@
-INSERT INTO users (firstname, lastname, allergies, email, password) VALUES ('Gustavo','Gibo', 'glutenfree, nutsfree, dairyfree', 'gustavo.gibo@gmail.com', '21232f297a57a5a743894a0e4a801fc3'), ('Farley','Meow', 'soyfree, nutsfree, dairyfree', 'farley.meow@gmail.com', '21232f297a57a5a743894a0e4a801fc3'), ('Jon','Snow', 'vegan, dairyfree', 'knownothing@gmail.com', '21232f297a57a5a743894a0e4a801fc3'), ('Dwight','Schrute', 'glutenfree, dairyfree', 'schrute@gmail.com', '21232f297a57a5a743894a0e4a801fc3'), ('Gustavo','Gibo', 'glutenfree, nutsfree, dairyfree', 'gustavo.gibo@gmail.com', '21232f297a57a5a743894a0e4a801fc3');
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.6.34-log - MySQL Community Server (GPL)
+-- Server OS:                    Win32
+-- HeidiSQL Version:             9.5.0.5249
+-- --------------------------------------------------------
 
-INSERT INTO occasions (name, street, number, zipcode, city, date, starttime, endtime) VALUES ('Friday Picnic', 'Stanyan St', 501, 94117, 'San Francisco', '2018-06-28', '14:00:00', '20:00:00');
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-INSERT INTO occasions (name, street, number, zipcode, city, date, starttime, endtime) VALUES ('Saturday Breakfast at Yerba Buena Gardens', 'Howard Street', 750, 94103, 'San Francisco', '2018-07-25', '14:00:00', '19:00:00');
+-- Dumping data for table satiable.food: ~0 rows (approximately)
+/*!40000 ALTER TABLE `food` DISABLE KEYS */;
+/*!40000 ALTER TABLE `food` ENABLE KEYS */;
 
-INSERT INTO occasions (name, street, number, zipcode, city, date, starttime, endtime) VALUES ('Lunch at Lafayette Park', 'Lafayette Park', 0, 94109, 'San Francisco', '2018-08-25', '12:00:00', '21:00:00');
+-- Dumping data for table satiable.occasions: ~0 rows (approximately)
+/*!40000 ALTER TABLE `occasions` DISABLE KEYS */;
+INSERT INTO `occasions` (`id`, `name`, `street`, `number`, `zipcode`, `city`, `date`, `starttime`, `endtime`, `UserId`) VALUES
+	(1, 'Friday Picnic', 'Stanyan St', 501, '94117', 'San Francisco', '2018-06-28 00:00:00', '14:00:00', '20:00:00', 1),
+	(2, 'Saturday Breakfast at Yerba Buena Gardens', 'Howard Street', 750, '94103', 'San Francisco', '2018-07-25 00:00:00', '14:00:00', '19:00:00', 2),
+	(3, 'Lunch at Lafayette Park', 'Lafayette Park', 0, '94109', 'San Francisco', '2018-08-25 00:00:00', '12:00:00', '21:00:00', 2),
+	(4, 'Monday Blues', 'Dolores Park', 0, '94114', 'San Francisco', '2018-06-29 00:00:00', '17:00:00', '21:00:00', 4),
+	(5, 'Sunday Brunch', 'Dolores Park', 0, '94114', 'San Francisco', '2018-06-25 00:00:00', '16:00:00', '21:00:00', 5);
+/*!40000 ALTER TABLE `occasions` ENABLE KEYS */;
 
-INSERT INTO occasions (name, street, number, zipcode, city, date, starttime, endtime) VALUES ('Monday Blues', 'Dolores Park', 0, 94114, 'San Francisco', '2018-06-29', '17:00:00', '21:00:00');
+-- Dumping data for table satiable.useroccasions: ~0 rows (approximately)
+/*!40000 ALTER TABLE `useroccasions` DISABLE KEYS */;
+INSERT INTO `useroccasions` (`OccasionId`, `UserId`) VALUES
+	(3, 1),
+	(4, 1),
+	(5, 1),
+	(3, 2),
+	(4, 2),
+	(3, 3),
+	(4, 3),
+	(3, 4),
+	(5, 4),
+	(3, 5),
+	(5, 5);
+/*!40000 ALTER TABLE `useroccasions` ENABLE KEYS */;
 
-INSERT INTO occasions (name, street, number, zipcode, city, date, starttime, endtime) VALUES ('Sunday Brunch', 'Dolores Park', 0, 94114, 'San Francisco', '2018-06-25', '16:00:00', '21:00:00');
+-- Dumping data for table satiable.users: ~5 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `allergies`, `email`, `password`) VALUES
+	(1, 'Gustavo', 'Gibo', 'glutenfree, nutsfree, dairyfree', 'gustavo.gibo@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
+	(2, 'Farley', 'Meow', 'soyfree, nutsfree, dairyfree', 'farley.meow@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
+	(3, 'Jon', 'Snow', 'vegan, dairyfree', 'knownothing@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
+	(4, 'Dwight', 'Schrute', 'glutenfree, dairyfree', 'schrute@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
+	(5, 'Gustavo', 'Gibo', 'glutenfree, nutsfree, dairyfree', 'gustavo.gibo@gmail.com', '21232f297a57a5a743894a0e4a801fc3');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
-
-INSERT INTO useroccasions (OccasionId, UserId) values (4, 1), (3, 2), (3, 4), (5, 1), (6, 1), (7, 1), (7, 2), (3, 3), (3, 5), (4, 2), (4, 3), (3, 1), (5, 4), (5,5);
-
-INSERT INTO food (name, link, instructions, OccasionId, UserId) VALUES ('Old fashioned cornbread', 'https://spoonacular.com/recipes/old-fashioned-gluten-free-cornbread-793378', '', 3, 2), ('Spinach and Ricotta Grilled Cheese', 'https://spoonacular.com/recipes/spinach-and-ricotta-grilled-cheese-765700', '', 5, 1), ('New York Times Pumpkin Pie with an Oreo Crust', 'https://spoonacular.com/recipes/new-york-times-pumpkin-pie-with-an-oreo-crust-598130', '', 7, 1), ('The New York Times Chocolate Chip Cookies', 'https://spoonacular.com/recipes/the-new-york-times-chocolate-chip-cookies-507667', '', 3, 3), ('Pizza Roll-Up', 'https://spoonacular.com/recipes/pizza-roll-up-695528', '', 5, 5), ('No-Bake Greek Yogurt Cheesecake Squares', 'https://spoonacular.com/recipes/no-bake-greek-yogurt-cheesecake-squares-1013161', '', 3, 5);
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

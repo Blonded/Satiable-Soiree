@@ -19,7 +19,10 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationCustom02">Password:</label>
-      <input type="text" class="form-control" id="password" placeholder="Password" value="" required>
+      <!-- dont f with [this is the previous input before password toggle]-->
+      <!-- <input type="text" class="form-control" id="password" placeholder="Password" value="" required> -->
+      <input type="password" class="form-control" id="password" placeholder="Password" value="" required>
+
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -54,3 +57,17 @@
 </div>
 <!-- ^ closes div login -->
 <script src="/assets/js/login.js"></script>
+
+
+<script>
+
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "password";
+    } else {
+        x.type = "password";
+    }
+}
+
+</script>

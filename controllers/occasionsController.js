@@ -10,11 +10,13 @@ router.get("/", function(req, res) {
   res.render("index");
 });
 
-router.get("/api/usernav/:userid", function(req, res) {
+router.get("/api/usernav", function(req, res) {
   
-  var userId = req.params.userid;
+  var userId = req.body.userid;
 
-  
+  db.Occasion.findAll
+
+
 
 });
 

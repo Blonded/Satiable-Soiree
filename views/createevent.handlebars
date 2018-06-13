@@ -5,11 +5,11 @@
  
 <body id="event-background">
 
-  <div class="card" id="event" style="background-color: rgba(248, 146, 87, 0.555);">
+  <div class="card" id="event" style="background-color: rgb(235, 235, 235, .5);">
     
-    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
+    <div class="card-body">
         {{!-- event info --}}
-        <h4 class="row">Event Information</h4>
+        <h4 class="row ml-2">Event Information</h4>
           <form class="form-inline row ml-2 mr-2">
             <input type="text" class="col-sm-1 form-control col-sm-3 my-2" placeholder="event name"></input>
 
@@ -46,29 +46,10 @@
             </div>
           </form>
   </div>
-  <h4 class="row ml-2">Who Is Going?</h4>
-        <div class = "row ml-5 mr-5" >
-        {{!-- Who will be going? --}}
-         
-          <div class="col-4">{{> user/user-block}}</div> 
-          <div class="col-4">{{> user/user-block}}</div>
-          <div class="col-4">{{> user/user-block}}</div>
-        </div>
 
-    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
-            <h4 class="row">Will there be food?</h4>
-    {{!-- form for displaying event restrictions --}}
-      <div class="row ml-5 mr-5">
-        {{!-- Who will be going? --}}
-      
-        <div class="col-4">{{> food/food-block}}</div>
-        <div class="col-4">{{> food/food-block}}</div>
-        <div class="col-4">{{> food/food-block}}</div>
-      </div>
-    </div>
     <br>
     
-    <a href="/createevent" id="event-submit" type="submit-button" class="btn btn-secondary">Create Event</a>
+    <a href="/usernav" id="event-submit" type="submit-button" class="btn btn-secondary ml-4">Create Event</a>
     <br>
 
 

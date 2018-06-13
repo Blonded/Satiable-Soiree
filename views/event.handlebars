@@ -5,36 +5,58 @@
  
 <body id="event-background">
 
-  <div class="card" id="event" style="background-color: rgb(213, 233, 226, 0.555);">
+  <div class="card" id="event" style="background-color: rgba(248, 146, 87, 0.555);">
     
-    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
-        {{!-- Are you going? --}}
-          <form class="form-inline row">
-            <label class="col-sm-2 my-2" for="inlineFormCustomSelectPref">Will you attend? </label>
-            <select class="col-sm-1 custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option value="1">YES</option>
-              <option value="2">NO</option>
-            </select>
-            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Date:  </label><script>moment().format("MMM Do YYYY");</script>
-            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Start Time:  </label>
-            <label class="col-sm-2 " for="inlineFormCustomSelectPref">End Time: </label>
-            <label class="col-sm-2 " for="inlineFormCustomSelectPref">Location: </label>
+    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
+        {{!-- event info --}}
+        <h4 class="row">Event Information</h4>
+          <form class="form-inline row ml-2 mr-2">
+            <input type="text" class="col-sm-1 form-control col-sm-3 my-2" placeholder="event name"></input>
+
+            <label class="col-sm-1" for="end-time">end time: </label>
+            <input class="col-sm-1.5 form-control" id="endtime" type="time" name="appt-time" value="00:00">
+
+            <label class="col-sm-1" for="start-time">start time: </label>
+            <input class="col-sm-1.5 form-control" id="starttime" type="time" name="appt-time" value="00:00">
+
+            <label class="col-sm-1" for="date">date: </label>
+            <input class="col-sm form-control" id="date" type="date" name="date" value="">
           </form>
-            {{!-- <br>
-            <p class="when col-sm-4">When: </p>
-            <p class="where col-sm-4">Where: </p> --}}
-    </div>
+          <br>
+          {{!-- name, street, number, zipcode, city,  --}}
+          <form class="ml-2">
+            <div class="form-row">
+              <div class="col-2">
+                <input type="text" class="form-control" placeholder="Number">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Street">
+              </div>
+            </div>
+          </form>
+          <br>
+          <form class="ml-2">
+            <div class="form-row">
+              <div class="col-7">
+                <input type="text" class="form-control" placeholder="City">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Zip">
+              </div>
+            </div>
+          </form>
+  </div>
+  <h4 class="row ml-2">Who Is Going?</h4>
+        <div class = "row ml-5 mr-5" >
+        {{!-- Who will be going? --}}
+         
+          <div class="col-4">{{> user/user-block}}</div> 
+          <div class="col-4">{{> user/user-block}}</div>
+          <div class="col-4">{{> user/user-block}}</div>
+        </div>
 
-    <div class = "row ml-5 mr-5" >
-    {{!-- Who will be going? --}}
-      
-      <div class="col-4">{{> user/user-block}}</div> 
-      <div class="col-4">{{> user/user-block}}</div>
-      <div class="col-4">{{> user/user-block}}</div>
-    </div>
-
-    <div class="card-body" style="background-color: rgba(25, 185, 132, 0.555);">
-            <h4>What do you want to bring?</h4>
+    <div class="card-body" style="background-color: rgba(201, 144, 107, 0.555);">
+            <h4 class="row">Will there be food?</h4>
     {{!-- form for displaying event restrictions --}}
       <div class="row ml-5 mr-5">
         {{!-- Who will be going? --}}
@@ -44,6 +66,11 @@
         <div class="col-4">{{> food/food-block}}</div>
       </div>
     </div>
+    <br>
+    
+    <button id="event-submit" type="submit-button" class="btn btn-outline">Update Event</button>
+
+    <br>
 
 
 </div>

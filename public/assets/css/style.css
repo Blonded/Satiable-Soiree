@@ -8,6 +8,19 @@
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+/* typer */
+.typer {
+  font-size: 28px;
+  /* background-color: #f8f9fa!important; */
+  margin-right: 20%;
+  margin-left: 30%;
+  /* font-family: arial; */
+  margin: 38% auto 0px;
+  display: inline-block;
+  font-family: 'Archivo Black', sans-serif;
+  padding-bottom: 70px;
+}
+
 #index-card{
 /* opacity: 0.33; */
 }

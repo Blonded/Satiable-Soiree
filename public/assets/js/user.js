@@ -17,26 +17,96 @@ $(function() {
   //   );
   // });
 
-  $(".create-form").on("submit", function(event) {
+  $("#email").focusout(function() {
+
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if(regex.test($(this).val()) == false) {
+
+      $('#myModal3').modal('show');
+      $("#btn-createprofile").addClass("disabled");
+      $("#btn-createprofile").attr("aria-disabled", "true");
+
+      return true;
+
+    } else {
+
+      $("#btn-createprofile").removeClass("disabled");
+      $("#btn-createprofile").attr("aria-disabled", "false");
+
+    }
+
+    var obj = {
+      email : $(this).val()
+    };
+
+    $.ajax("/api/checkExistingEmail", {
+      type: "POST",
+      data: obj
+    }).then(
+      function(result) {
+        
+        if(result) {
+
+          $('#myModal').modal('show');
+          $("#btn-createprofile").addClass("disabled");
+
+        } else {
+
+          $("#btn-createprofile").removeClass("disabled");
+
+        }
+        
+        // location.reload();
+      }
+    );
+    
+  });
+
+  $("#btn-createprofile").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newPet = {
-      name: $("#pet-name").val().trim(),
-      species: $("#pet-type").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim(),
-      userID: $("#userID").val().trim()
+    var resultAllergies = [];
+
+    $('.head input:checked').each(function() {
+      resultAllergies.push(this.value);
+    });
+
+    // resultAllergies = $("input").attr("name");
+
+    console.log(resultAllergies);
+
+    var newUser = {
+      firstname: $("#firstname").val().trim(),
+      lastname: $("#lastname").val().trim(),
+      allergies: resultAllergies,
+      email: $("#email").val().trim(),
+      password: $("#password").val().trim()
     };
 
     // Send the POST request.
-    $.ajax("pets/api/pets", {
+    $.ajax("/api/createprofile", {
       type: "POST",
-      data: newPet
+      data: newUser
     }).then(
-      function() {
-        console.log("created new Pet");
-        // Reload the page to get the updated list
-        location.reload();
+      function(result) {
+        
+        if(result) {
+
+          window.sessionStorage.clear();
+          window.sessionStorage.setItem('logged', true);
+          window.sessionStorage.setItem('id', result.id);
+          window.sessionStorage.setItem('firstname', result.firstname);
+          window.sessionStorage.setItem('lastname', result.lastname);
+          window.sessionStorage.setItem('email', result.email);
+          window.sessionStorage.setItem('password', result.password);
+          window.sessionStorage.setItem('allergies', result.allergies);
+
+          $('#myModal4').modal('show');
+
+        }
+
       }
     );
   });

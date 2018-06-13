@@ -22,8 +22,8 @@ router.get("/usernav", function(req, res) {
   res.render("usernav");
 });
 
-router.get("/eventdetails", function(req, res) {
-  res.render("eventdetails");
+router.get("/createevent", function(req, res) {
+  res.render("createevent");
 });
 
 router.get("/event", function (req, res) {
@@ -49,22 +49,34 @@ router.get("/api/usernav", function(req, res) {
 
 });
 
+router.post("/api/checkExistingEmail", function(req, res) {
+
+  //verify if there is a user already registered with this e-mail
+  db.User.findOne({ where: {email: req.body.email}}).then(function(result) {
+
+    if(result) {
+
+      res.json(true);
+      
+    } else {
+
+      res.json(false);
+    }
+
+  });
+
+});
+
 router.post("/api/createprofile", function(req, res) {
 
-  console.log('trying to get posts');
-    var query = {};
-    query['id'] = req.query.id;
-
-    // 1. Add a join here to include all of the Authors to these posts
-    db.Occasion.findAll({
-      include: [{
-        where: query,
-        model: db.User,
-      }]
-    }).then(function(occasions) {
-      res.json(occasions);
-      
-    });
+  db.User.create([
+    "firstname", "lastname","allergies", "email", "password"],
+    [
+      req.body.firstname, req.body.lastname, req.body.allergies, req.body.email, md5(req.body.password)
+    ], function(result) {
+    // Send back the ID of the new quote
+    res.json(result);
+  });
 
 });
 

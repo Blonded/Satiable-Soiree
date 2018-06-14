@@ -194,22 +194,8 @@ margin-right: auto;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* _____________________________________________ */
-/* EVENT Page */
+/* create EVENT Page */
 
 #event-background {
     background: url("../img/liana-mikah-393893-unsplash.jpg") no-repeat center center fixed;
@@ -223,6 +209,7 @@ margin-right: auto;
 #event {
   margin: 5%;
 }
+
 
 #event-submit {
   align-content: center;

@@ -1,42 +1,22 @@
-
-<li>
-    {{name}}
-
-    <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-        {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-    </button>
-
-    <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
-</li>
-
-
-<div class="card p-4 m-4">
-
-    <div class="card-body" data-id="{{id}}">
-
-    <h5 class="card-title" id="name">Event Name</h5>
-    <li>
-        <label class="col-sm-1" for="end-time">end time: </label>
-        <div id="endtime" type="time" name="appt-time" value="00:00">00:00 AM</div>
-
-        <label class="col-sm-1" for="start-time">start time: </label>
-        <div id="starttime" type="time" name="appt-time" value="00:00">00:00 AM</div>
-
-        <label class="col-sm-1" for="date">date: </label>
-        <div id="date" type="date" name="date" value="">date</div>
-    </li>
-    <p class="card-text">Location</p>
-    <card class="row">
-        <div type="text" id="number">number</div>
-        <div type="text" id="street">street</div>
-        <div type="text" id="city">city</div>
-        <div type="text" id="zipcode">zipcode</div>
-    </card>
-
-    <div type="text" id="restrictions">restrictions</div>
-
-    </div>
-</div>
-{{!-- {{user}} --}} {{!--
-<div data- "{{id}}">
-    {{#if event-id="yes"}}SLEEP TIME!{{else}}WAKE UP!{{/if}}</div> --}}
+<script>
+        var block = "";
+        block += "<div class='col-4'>";
+          block += "<div class='card' style='margin-top:25px;'>";
+            block +="<img class='card-img-top img-fluid' src='http://visitlawrencecounty.com/wp-content/uploads/2017/11/picnic.jpg' alt='Card image cap'>";
+            block +="<div class='card-body'>"              
+              block +="<h5 class='card-title'>"+name+"</h5>";
+              block +="<ul>";
+                if(posts[index].number == 0) {
+                  block +="<li>Address: "+posts[index].street+", "+posts[index].zipcode+"</li>";
+                } else {
+                  block +="<li>Address: "+posts[index].number+" "+posts[index].street+", " + posts[index].city +", "+posts[index].zipcode+"</li>";
+                }
+                block +="<li>Date: "+posts[index].date+"</li>";
+                block +="<li>Time"+posts[index].starttime+", "+post[index].endtime+"</li>";
+                block +="<li>"+posts[index].name+"</li>";
+              block +="</ul>";
+              block += "<a class='btn btn-primary href='event/"+ id >More details</a>;
+            block +="</div>";            
+          block +="</div>";
+        block +="</div>";
+</script>

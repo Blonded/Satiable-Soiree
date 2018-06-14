@@ -11,9 +11,9 @@ Log-in to the site, and create your event [Name, Location, Date, Time]. Thereaft
 Enjoy.
 
 ## Use the app:
-Coming soon.
-Launch Satiable-Soiree [here!](URL HERE)
-![Homepage](http://i65.tinypic.com/iggi2c.png)
+* [Launch app](URL HERE)
+
+![Homepage](http://i67.tinypic.com/2d1nvxd.png)
 
 ## Required packages [NPM]:
 * Express

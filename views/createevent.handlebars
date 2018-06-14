@@ -1,36 +1,41 @@
 {{!-- This is the event page, where the user can create an event.
   Listing the time, location, friends, event name and using the API Key to generate random
   recipes onto the page. Etc. --}}
- {{!--Every Page will have this - this is index --}} 
- 
+ {{!--Every Page will have this - this is index --}}
+
 <body id="event-background">
 
   <div class="card" id="event" style="background-color: rgb(235, 235, 235, .5);">
-    
+
     <div class="card-body">
         {{!-- event info --}}
         <h4 class="row ml-2">Event Information</h4>
           <form class="form-inline row ml-2 mr-2">
-            <input id="name" type="text" class="form-control col-sm my-2" placeholder="event name" required></input>
 
-            <label class="col-sm-1" for="start-time">start: </label>
+            <input id="name" type="text" class="col-sm-1 form-control col-sm-3 my-2" placeholder="Event Name" required></input>
+
+            <label class="col-sm-1" for="start-time">Start Time: </label>
+
             <input class="col-sm-1.5 form-control" id="starttime" type="time" name="appt-time" placeholder="00:00" required>
 
-            <label class="col-sm-1" for="end-time">end time: </label>
+            <label class="col-sm-1" for="end-time">End Time: </label>
             <input class="col-sm-1.5 form-control" id="endtime" type="time" name="appt-time" placeholder="00:00" required>
 
-            <label class="col-sm-1" for="date">date: </label>
-            <input class="col-sm-2 form-control" id="date" type="date" name="date" value="" required>
+            <label class="col-sm-1" for="date">Date: </label>
+            <input class="col-sm form-control" id="date" type="date" name="date" value="" required>
+
           </form>
           <br>
           {{!-- name, street, number, zipcode, city,  --}}
           <form class="ml-2">
             <div class="form-row">
               <div class="col-2">
-                <input type="text" id="number" class="form-control" placeholder="#">
+                <label class="col-md-12" for="address-number">Address: (Input 0 if unknown)</label>
+                <input type="text" id="number" class="form-control" placeholder="Address #">
               </div>
               <div class="col">
-                <input type="text" id="street" class="form-control" placeholder="street" required>
+                <label class="col-md-10" for="street">Street Name:</label>
+                <input type="text" id="street" class="form-control" placeholder="Street Name" required>
               </div>
             </div>
           </form>
@@ -41,7 +46,7 @@
                 <input type="text" id="city" class="form-control" placeholder="city" required>
               </div>
               <div class="col">
-                <input type="text" id="zipcode" class="form-control" placeholder="zipcode" required>
+                <input type="text" id="zipcode" class="form-control" placeholder="Zipcode" required>
               </div>
             </div>
           </form>
@@ -50,6 +55,7 @@
     <br>
     
     <a href="/usernav/" id="event-submit" type="submit-button" class="btn btn-secondary ml-4">Create Event</a>
+
     <br>
 
 
@@ -63,7 +69,7 @@
 
 
 
-        
+
 
 <script src="/assets/js/occasion.js"></script>
 <div class="modal fade" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

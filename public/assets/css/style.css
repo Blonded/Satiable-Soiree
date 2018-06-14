@@ -4,12 +4,18 @@
 
 /* button on index */
 .started {
-  margin-bottom: 30px;
   background-color: brown;
   border-color: crimson;
   padding: .99rem;
+  float: right;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+/* about us image */
+.img-fluid{
+  margin-top: 24px;
+}
+
 
 /* about columns */
 .column {
@@ -24,14 +30,21 @@
     clear: both;
 }
 
-
-
 .satiable-aboutme{
   font-family: 'Josefin Slab', serif;
 }
 /* ___________ */
 
+#reviews{
+  text-align: center;
+  /* font-family: 'Josefin Slab', arial; */
 
+}
+
+#written-reviews{
+  text-align: center;
+  font-size:10;
+}
 
 
 /* typer */

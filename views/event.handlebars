@@ -1,34 +1,32 @@
  
 <body id="event-background">
-{{result.street}}
 <div class="card-body" id="event" style="background-color: rgb(235, 235, 235);">
   <div class="card">
     <br>
-    <h1>{{result.id}}</h1>
         {{!-- event info --}}
         <div class="card-body" data-id="{{result.id}}">
-          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name"></h4>
+          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name">{{result.name}}</h4>
         </div>
         <div class="card ml-5 mr-5 p-4">
                 <span class="row ml-3">
                   <div class="ml-2" type="text" id="number">{{result.number}}</div>
-                  <div class="ml-2" type="text" id="street">street</div>
-                  <div class="ml-2" type="text" id="city">city</div>
-                  <div class="ml-2" type="text" id="zipcode">zipcode</div>
+                  <div class="ml-2" type="text" id="street">{{result.street}}</div>
+                  <div class="ml-2" type="text" id="city">{{result.city}}</div>
+                  <div class="ml-2" type="text" id="zipcode">{{result.zipcode}}</div>
                 </span>
 
                 <div class="card-body row m-2">
                 <div class="col-sm-3">
                   <label for="start-time">start time: </label>
-                  <div id="starttime" type="time" name="appt-time" value="00:00">00:00 AM</div>
+                  <div id="starttime" type="time" name="appt-time" value="00:00">{{result.starttime}}</div>
                 </div>
                 <div class="col-sm-3">
                   <label for="end-time">end time: </label>
-                  <div id="endtime" type="time" name="appt-time" value="00:00">00:00 AM</div>
+                  <div id="endtime" type="time" name="appt-time" value="00:00">{{result.endtime}}</div>
                 </div>
                 <div class="col-sm-3">
                   <label for="date">date: </label>
-                  <div id="date" type="date" name="date" value=""></div>
+                  <div id="date" class="occasion-date" data-value="{{result.date}}" type="date" name="date">{{result.date}}</div>
                 </div>
               </div>
 
@@ -77,5 +75,5 @@
 
 
 </div>
-
+<script src="/assets/js/occasion.js"></script>
 </body>

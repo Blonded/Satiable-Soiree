@@ -27,10 +27,6 @@ router.get("/createevent", function(req, res) {
   res.render("createevent");
 });
 
-router.get("/event", function (req, res) {
-  res.render("event");
-});
-
 router.get("/api/usernav", function(req, res) {
 
   console.log('trying to get posts');
@@ -109,12 +105,20 @@ router.post("/api/createevent", function(req, res) {
 
 
 router.get("/event/:eventid", function(req, res) {
-  
-  db.Occasion.findOne({where: {id: req.params.eventid}}).then(function(result) {
-    console.log(result.dataValues);
-    res.render("event", { result: result.dataValues});
 
-  });
+  if(req.params.id == "") {
+
+    res.render("usernav");
+
+  } else {
+  
+    db.Occasion.findOne({where: {id: req.params.eventid}}).then(function(result) {
+      console.log(result.dataValues);
+      res.render("event", { result: result.dataValues});
+
+    });
+
+  }
 });
 
 router.put("/api/pets/:id", function(req, res) {

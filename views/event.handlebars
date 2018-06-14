@@ -1,11 +1,10 @@
-<h1>{{results.farley}}</h1>
 <body id="event-background">
 <div class="card-body" id="event" style="background-color: rgb(235, 235, 235);">
   <div class="card">
     <br>
         {{!-- event info --}}
         <div class="card-body" data-id="{{result.id}}">
-          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name">{{result.name}}</h4>
+          <h4 class="card-title center ml-4 mr-4 p-4" style="background-color: rgb(235, 235, 235);" id="name">{{results.infoevent.name}}</h4>
         </div>
         <div class="card ml-5 mr-5 p-4">
                 <span class="row ml-3">
@@ -13,25 +12,25 @@
                     <strong>Address: </strong>
                   </div>
                   {{#if result.number}}
-                  <div class="ml-2" type="text" id="number">{{result.number}}</div>
+                  <div class="ml-2" type="text" id="number">{{results.infoevent.number}}</div>
                   {{/if}}
-                  <div class="ml-2" type="text" id="street">{{result.street}}</div>
-                  <div class="ml-2" type="text" id="city">{{result.city}}</div>
-                  <div class="ml-2" type="text" id="zipcode">{{result.zipcode}}</div>
+                  <div class="ml-2" type="text" id="street">{{results.infoevent.street}}</div>
+                  <div class="ml-2" type="text" id="city">{{results.infoevent.city}}</div>
+                  <div class="ml-2" type="text" id="zipcode">{{results.infoevent.zipcode}}</div>
                 </span>
 
                 <div class="card-body row m-2">
                 <div class="col-sm-3">
                   <label for="start-time">start time: </label>
-                  <div id="starttime" type="time" name="appt-time" value="00:00">{{result.starttime}}</div>
+                  <div id="starttime" type="time" name="appt-time" value="00:00">{{results.infoevent.starttime}}</div>
                 </div>
                 <div class="col-sm-3">
                   <label for="end-time">end time: </label>
-                  <div id="endtime" type="time" name="appt-time" value="00:00">{{result.endtime}}</div>
+                  <div id="endtime" type="time" name="appt-time" value="00:00">{{results.infoevent.endtime}}</div>
                 </div>
                 <div class="col-sm-3">
                   <label for="date">date: </label>
-                  <div id="date" class="occasion-date" data-value="{{result.date}}" type="date" name="date">{{result.date}}</div>
+                  <div id="date" class="occasion-date" data-value="{{results.infoevent.date}}" type="date" name="date">{{results.infoevent.date}}</div>
                 </div>
               </div>
 
@@ -53,7 +52,7 @@
   <h4 class="align-center row ml-5 mr-5 p-4" style="background-color: rgb(235, 235, 235);">Who Is Going?</h4>
         <div class = "row ml-5 mr-5" >
         {{!-- Who will be going? --}}
-          {{#each resultfriends}}
+          {{#each results.infousersfood}}
           <div class="col-4">{{> user/user-block}}</div> 
           {{/each}}
         </div>
@@ -63,10 +62,9 @@
     {{!-- form for displaying event restrictions --}}
       <div class="row ml-5 mr-5">
         {{!-- Who will be going? --}}
-      
-        <div class="col-4">{{> food/food-block}}</div>
-        <div class="col-4">{{> food/food-block}}</div>
-        <div class="col-4">{{> food/food-block}}</div>
+        {{#each results.infofood}}
+          <div class="col-4">{{> food/food-block}}</div>
+        {{/each}}
       </div>
     </div>
     

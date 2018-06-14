@@ -13,6 +13,17 @@ Enjoy.
 ## Use the app:
 Coming soon.
 Launch Satiable-Soiree [here!](URL HERE)
+![Homepage](http://i65.tinypic.com/iggi2c.png)
+
+## Required packages [NPM]:
+* Express
+* Express-handlebars
+* FS
+* Path
+* Request
+* Body-Parser
+* Sequelize
+
 
 ## Built With:
 
@@ -24,12 +35,8 @@ Launch Satiable-Soiree [here!](URL HERE)
 * [MySQL](https://www.mysql.com/) - Open Source Database
 * [Bootstrap](https://getbootstrap.com/) - Website Framework
 * [Heroku](https://heroku.com) - Platform Service to launch site
-* [Bulma](https://bulma.io/) - Website Framework
 * [TyperJs](https://steven.codes/typerjs/) - Javascript Library FUNCTIONAL
-* [Switchery](http://abpetkov.github.io/switchery/) - jQuery Plug-in
 * [Google Fonts](https://fonts.google.com/) - Font Library
-
-* [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) - API Website for Recipes
 
 ## Authors 🖋
 

@@ -25,7 +25,9 @@ Launch Satiable-Soiree [here!](URL HERE)
 * [Bootstrap](https://getbootstrap.com/) - Website Framework
 * [Heroku](https://heroku.com) - Platform Service to launch site
 * [Bulma](https://bulma.io/) - Website Framework
+* [TyperJs](https://steven.codes/typerjs/) - Javascript Library FUNCTIONAL
 * [Switchery](http://abpetkov.github.io/switchery/) - jQuery Plug-in
+* [Google Fonts](https://fonts.google.com/) - Font Library
 
 * [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) - API Website for Recipes
 
@@ -38,3 +40,4 @@ Launch Satiable-Soiree [here!](URL HERE)
 ## Acknowledgments 🗣
 
 * **TyperJs** [TyperJS - Library] (https://steven.codes/typerjs/)
+* **UnSplash** [Photos] (https://unsplash.com/)

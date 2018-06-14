@@ -9,7 +9,12 @@
         </div>
         <div class="card ml-5 mr-5 p-4">
                 <span class="row ml-3">
+                  <div class="ml-2">
+                    <strong>Address: </strong>
+                  </div>
+                  {{#if result.number}}
                   <div class="ml-2" type="text" id="number">{{result.number}}</div>
+                  {{/if}}
                   <div class="ml-2" type="text" id="street">{{result.street}}</div>
                   <div class="ml-2" type="text" id="city">{{result.city}}</div>
                   <div class="ml-2" type="text" id="zipcode">{{result.zipcode}}</div>
@@ -48,10 +53,9 @@
   <h4 class="align-center row ml-5 mr-5 p-4" style="background-color: rgb(235, 235, 235);">Who Is Going?</h4>
         <div class = "row ml-5 mr-5" >
         {{!-- Who will be going? --}}
-         
+          {{#each resultfriends}}
           <div class="col-4">{{> user/user-block}}</div> 
-          <div class="col-4">{{> user/user-block}}</div>
-          <div class="col-4">{{> user/user-block}}</div>
+          {{/each}}
         </div>
 
     

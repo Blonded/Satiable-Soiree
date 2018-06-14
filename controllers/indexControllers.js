@@ -111,12 +111,45 @@ router.get("/event/:eventid", function(req, res) {
     res.render("usernav");
 
   } else {
+
+    var results = {};
   
-    db.Occasion.findOne({where: {id: req.params.eventid}}).then(function(result) {
-      console.log(result.dataValues);
-      res.render("event", { result: result.dataValues});
+    db.Occasion.findOne({
+      where: {id: req.params.eventid},
+      include: [{
+        model:db.User, 
+        attributes: ['id', 'firstname', 'lastname', 'allergies', 'email']
+      }]
+    }).then(function(result) {
+      console.log(result);
+
+      // results.infoevent = result.dataValues;
+
+      res.render("event", { result: result.dataValues,
+                            resultfriends: result.Users
+                          });
 
     });
+
+    // db.Occasion.findOne({
+    //   where: {id: req.params.eventid},
+    //   include: [{
+    //     model:db.User, 
+    //     attributes: ['id', 'firstname', 'lastname', 'allergies', 'email'],
+    //     include: [{
+    //       model:db.Food,
+    //     }]
+    //   }]
+    // }).then(function(result) {
+    //   console.log(result);
+
+    //   // results.infoevent = result.dataValues;
+
+    //   res.render("event", { result: result.dataValues,
+    //                         resultfriends: result.Users
+    //                       });
+
+    // });
 
   }
 });

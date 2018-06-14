@@ -82,7 +82,7 @@
 
 /* background */
 
-#body {
+#body-index {
   background: url("../img/ben-duchac-66002-unsplash.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -102,7 +102,8 @@
   position: fixed;
   width: 100%;
   bottom: 0%;
-  background-color: rgb(196, 196, 196);
+  /* background-color: rgb(196, 196, 196); */
+  background-color: #f8f9fa!important;
   text-align: center;
   font-size: 10px;
 }
@@ -139,7 +140,6 @@ margin-right: auto;
 
 /* __________________________________________ */
 /* CREATE PROFILE CSS */
-
 .card card-body {
   margin-top: 100px;
   padding-top: 140px;
@@ -158,6 +158,54 @@ margin-right: auto;
 #createprofile{
   padding-bottom: 100px;
 }
+
+/* _____________________________________________________ */
+/* User Navigation Page */
+
+#usernav-card{
+  text-align: left;
+  padding-top: 60px;
+  width: 560px;
+}
+
+
+#usernavbody {
+  background: url("https://images.unsplash.com/photo-1497465135434-9dc15238075a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a95358b94233609343f39d0fed9e169a&auto=format&fit=crop&w=2524&q=80");
+  background-size:cover;
+}
+
+.usernavheader {
+  text-align: center;
+}
+
+.card-header {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* _____________________________________________ */

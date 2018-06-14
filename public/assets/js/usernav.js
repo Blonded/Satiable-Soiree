@@ -10,9 +10,9 @@ $(document).ready(function() {
 });
 
 function getOccasions(userId) {
-    
+
     $.get("/api/usernav", {id: userId}, function(data) {
-      
+
       console.log("Occasions", data);
       var posts = data;
 
@@ -25,12 +25,12 @@ function getOccasions(userId) {
           name = name.substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
         }
-        
+
           var block = "";
           block += "<div class='col-4'>";
             block += "<div class='card' style='margin-top:25px;'>";
-              block +="<img class='card-img-top img-fluid' src='http://visitlawrencecounty.com/wp-content/uploads/2017/11/picnic.jpg' alt='Card image cap'>";
-              block +="<div class='card-body'>";              
+              block +="<img class='card-img-top img-fluid' src='https://source.unsplash.com/500x500/?food' alt='Card image cap'>";
+              block +="<div class='card-body'>";
                 block +="<h5 class='card-title'>"+name+"</h5>";
                 block +="<ul>";
                   block += "<li>" + posts[index].name + "</li>";
@@ -44,7 +44,7 @@ function getOccasions(userId) {
                   }
                 block +="</ul>";
                 block += "<a class='btn btn-primary href=/event/" +posts[index].id+ "> More details </a>";
-              block +="</div>";            
+              block +="</div>";
             block +="</div>";
           block +="</div>";
           $(".container-occasions").append(block);
@@ -52,19 +52,19 @@ function getOccasions(userId) {
 
         /*
 
-        
+
           <img class='card-img-top' src='...' alt='Card image cap'>
-          
+
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            
+
           </div>
         </div>
 
         */
-        
+
       }
 
-      
+
     });
   }

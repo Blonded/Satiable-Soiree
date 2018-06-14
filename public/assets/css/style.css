@@ -140,10 +140,16 @@ margin-right: auto;
 
 /* __________________________________________ */
 /* CREATE PROFILE CSS */
-.card card-body {
-  margin-top: 100px;
-  padding-top: 140px;
+
+#createprofile-body{
+  background: url('https://images.unsplash.com/photo-1527462414896-5839a285978f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=44767c84c0eddfe8def07b5402df98ff&auto=format&fit=crop&w=634&q=80');
+  background-size: cover;
 }
+
+#createprofile-card{
+  margin-top: 40px;
+}
+
 
 .form-control-cp {
   width: 20%;

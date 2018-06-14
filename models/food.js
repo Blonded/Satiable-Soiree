@@ -27,17 +27,13 @@ module.exports = function(sequelize, DataTypes) {
 
   Food.associate = function(user) {
     Food.belongsTo(user.User, {
-      foreignKey: {
-        allowNull: false
-      }
+      foreignKey: "UserId"
     });
   };
 
-  Food.associate = function(occasion) {
-    Food.belongsTo(occasion.Occasion, {
-      foreignKey: {
-        allowNull: false
-      }
+  Food.associate = function(models) {
+    Food.belongsTo(models.Occasion, {
+      foreignKey: "OccasionId"
     });
   };
 

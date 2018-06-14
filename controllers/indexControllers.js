@@ -1,6 +1,8 @@
 var express = require("express");
 var md5 = require("md5");
 
+// var connection = require("./connection.js");
+
 var router = express.Router();
 
 // Import the model (pet.js) to use its database functions.
@@ -104,52 +106,107 @@ router.post("/api/createevent", function(req, res) {
 });
 
 
-router.get("/event/:eventid", function(req, res) {
+router.get("/event/:eventid/user/:userid", function(req, res) {
 
-  if(req.params.id == "") {
+  if(req.params.eventid == "" && req.params.userid == "") {
 
     res.render("usernav");
 
   } else {
 
-    var results = {};
-  
+  function findUser(eventid, userid) {
+
     db.Occasion.findOne({
-      where: {id: req.params.eventid},
-      include: [{
-        model:db.User, 
-        attributes: ['id', 'firstname', 'lastname', 'allergies', 'email']
-      }]
-    }).then(function(result) {
-      console.log(result);
+      where: {id: eventid, UserId: userid}
+    }).then(function(host) {
 
-      // results.infoevent = result.dataValues;
+      var results = {};
 
-      res.render("event", { result: result.dataValues,
-                            resultfriends: result.Users
-                          });
+      var logged;
+
+      if(host) {
+
+        
+        logged = true;
+        
+      } else {
+
+        logged= false;
+
+      }
+
+      results["host"] = logged;
+
+      findUsersAndTheirFood(results, eventid);
 
     });
 
-    // db.Occasion.findOne({
-    //   where: {id: req.params.eventid},
-    //   include: [{
-    //     model:db.User, 
-    //     attributes: ['id', 'firstname', 'lastname', 'allergies', 'email'],
-    //     include: [{
-    //       model:db.Food,
-    //     }]
-    //   }]
-    // }).then(function(result) {
-    //   console.log(result);
+  }
 
-    //   // results.infoevent = result.dataValues;
+  function findUsersAndTheirFood(obj, eventid) {
+    // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN USERS
+    // FOODS AND OCCASIONS
+    /* TODO: make the querie with sequelize */
+    var queryString = "";
+    queryString = "SELECT oc.name, GROUP_CONCAT(fo.name SEPARATOR ', ') as groupfood, oc.street, oc.number, oc.street, oc.city, oc.zipcode, oc.date, oc.starttime, oc.endtime, ";
+    queryString += "us.firstname, us.lastname, us.allergies, us.email, ";
+    queryString += "fo.name ";
+    queryString += "from occasions oc ";
+    queryString += "INNER JOIN useroccasions uo ON uo.OccasionId = oc.id ";
+    queryString += "INNER JOIN users us ON uo.UserId = us.id ";
+    queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
+    queryString += "WHERE oc.id = "+eventid;
+    queryString += " GROUP BY us.id";
 
-    //   res.render("event", { result: result.dataValues,
-    //                         resultfriends: result.Users
-    //                       });
+    db.Occasion.sequelize.query(queryString).then(function(joins) {
 
-    // });
+      obj["infousersfood"] = joins[0];
+
+      findFood(obj, eventid);
+      // results.infousers = joins[0];
+    });
+
+  }
+
+  function findFood(obj, eventid) {
+    // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN USERS
+    // FOODS AND OCCASIONS
+    /* TODO: make the querie with sequelize */
+    var queryString = "";
+    queryString = "SELECT oc.name, oc.street, oc.number, oc.street, oc.city, oc.zipcode, oc.date, oc.starttime, oc.endtime, ";
+    queryString += "us.firstname, us.lastname, us.allergies, us.email, ";
+    queryString += "fo.name ";
+    queryString += "from occasions oc ";
+    queryString += "INNER JOIN useroccasions uo ON uo.OccasionId = oc.id ";
+    queryString += "INNER JOIN users us ON uo.UserId = us.id ";
+    queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
+    queryString += "WHERE oc.id = "+eventid;
+
+    console.log(queryString);
+
+    db.Food.sequelize.query(queryString).then(function(joins) {
+
+      obj["infofood"] = joins[0];
+
+      findOccasion(obj, eventid);
+      // results.infousers = joins[0];
+    });
+
+  }
+  
+  function findOccasion(obj, eventid) {
+    db.Occasion.findOne({
+      where: {id: eventid}
+    }).then(function(result) {
+
+      obj["infoevent"] = result.dataValues;
+      console.log("176", obj);
+
+      res.render("event", {results: obj});
+    });
+  }
+
+    findUser(req.params.eventid, req.params.userid);
 
   }
 });

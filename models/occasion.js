@@ -61,7 +61,8 @@ module.exports = function(sequelize, DataTypes) {
 
   Occasion.associate = function(models) {
     Occasion.hasMany(models.Food, {
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
+      foreignKey: "OccasionId"
     });
   };
 

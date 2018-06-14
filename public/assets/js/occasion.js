@@ -45,4 +45,9 @@ $(function() {
         );
     });
 
+    var occasionDate = $(".occasion-date").data("value");
+    occasionDate = moment(occasionDate);
+    occasionDate = occasionDate.format("dddd, MMMM Do YYYY");
+    $(".occasion-date").text(occasionDate);
+
 });

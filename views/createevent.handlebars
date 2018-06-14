@@ -11,9 +11,11 @@
         {{!-- event info --}}
         <h4 class="row ml-2">Event Information</h4>
           <form class="form-inline row ml-2 mr-2">
+
             <input id="name" type="text" class="col-sm-1 form-control col-sm-3 my-2" placeholder="Event Name" required></input>
 
             <label class="col-sm-1" for="start-time">Start Time: </label>
+
             <input class="col-sm-1.5 form-control" id="starttime" type="time" name="appt-time" placeholder="00:00" required>
 
             <label class="col-sm-1" for="end-time">End Time: </label>
@@ -21,6 +23,7 @@
 
             <label class="col-sm-1" for="date">Date: </label>
             <input class="col-sm form-control" id="date" type="date" name="date" value="" required>
+
           </form>
           <br>
           {{!-- name, street, number, zipcode, city,  --}}
@@ -40,7 +43,7 @@
           <form class="ml-2">
             <div class="form-row">
               <div class="col-7">
-                <input type="text" id="city" class="form-control" placeholder="City" required>
+                <input type="text" id="city" class="form-control" placeholder="city" required>
               </div>
               <div class="col">
                 <input type="text" id="zipcode" class="form-control" placeholder="Zipcode" required>
@@ -50,8 +53,9 @@
   </div>
 
     <br>
+    
+    <a href="/usernav/" id="event-submit" type="submit-button" class="btn btn-secondary ml-4">Create Event</a>
 
-    <a id="event-submit" type="submit-button" class="btn btn-secondary ml-4">Create Event</a>
     <br>
 
 

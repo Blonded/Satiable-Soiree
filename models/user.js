@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  User.associate = (models) =>{
+  User.associate = function(models) {
     User.belongsToMany(models.Occasion, {
       through: {model: models.UserOccasion}
     })

@@ -4,8 +4,11 @@
 
         <div class="card-body" data-id="{{id}}">
             <h5 class="card-title">{{this.firstname}}</h5>
+            {{#if this.groupfood}}
             <p class="card-text">Bringing these items...</p>
             {{this.groupfood}}
+            {{/if}}
+            <p>Allergies: </p>
             <p>{{this.allergies}}</p>
 
         </div>

@@ -263,7 +263,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     });
   }
 
-    findUser(req.params.eventid, req.params.userid);
+    findUser(req.params.eventid, req.params.userId);
 
   }
 });

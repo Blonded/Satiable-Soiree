@@ -50,8 +50,8 @@ router.get("/usernav/:userid", function(req, res) {
     var queryString = "";
 
     queryString += "SELECT oc.id, oc.name, oc.street, oc.image ";
-    queryString += "from occasions oc ";
-    queryString += "INNER JOIN useroccasions uo ON oc.id = uo.OccasionId ";
+    queryString += "from Occasions oc ";
+    queryString += "INNER JOIN UserOccasions uo ON oc.id = uo.OccasionId ";
     queryString += "INNER JOIN users us ON us.id = uo.UserId ";
     queryString += "WHERE us.id = "+userid;
 
@@ -72,10 +72,10 @@ router.get("/usernav/:userid", function(req, res) {
     var queryString = "";
 
     queryString += "SELECT *, @attending := 1 as attending ";
-    queryString += "from occasions oc ";
+    queryString += "from Occasions oc ";
     queryString += "WHERE oc.id NOT IN (SELECT uo.OccasionId ";
-    queryString += "from occasions oc ";
-    queryString += "INNER JOIN useroccasions uo on oc.id = uo.OccasionId WHERE uo.UserId = "+userid+")";
+    queryString += "from Occasions oc ";
+    queryString += "INNER JOIN UserOccasions uo on oc.id = uo.OccasionId WHERE uo.UserId = "+userid+")";
 
     db.Occasion.sequelize.query(queryString).then(function(joins) {
 
@@ -202,14 +202,14 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
 
   function findUsersAndTheirFood(obj, eventid) {
     // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN USERS
-    // FOODS AND OCCASIONS
+    // FOODS AND Occasions
     /* TODO: make the querie with sequelize */
     var queryString = "";
     queryString = "SELECT oc.name, GROUP_CONCAT(fo.name SEPARATOR ', ') as groupfood, oc.street, oc.number, oc.street, oc.city, oc.zipcode, oc.date, oc.starttime, oc.endtime, ";
     queryString += "us.firstname, us.lastname, us.allergies, us.email, ";
     queryString += "fo.name ";
-    queryString += "from occasions oc ";
-    queryString += "INNER JOIN useroccasions uo ON uo.OccasionId = oc.id ";
+    queryString += "from Occasions oc ";
+    queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
     queryString += "INNER JOIN users us ON uo.UserId = us.id ";
     queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
@@ -227,14 +227,14 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
 
   function findFood(obj, eventid) {
     // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN USERS
-    // FOODS AND OCCASIONS
+    // FOODS AND Occasions
     /* TODO: make the querie with sequelize */
     var queryString = "";
     queryString = "SELECT oc.name, oc.street, oc.number, oc.street, oc.city, oc.zipcode, oc.date, oc.starttime, oc.endtime, ";
     queryString += "us.firstname, us.lastname, us.allergies, us.email, ";
     queryString += "fo.name ";
-    queryString += "from occasions oc ";
-    queryString += "INNER JOIN useroccasions uo ON uo.OccasionId = oc.id ";
+    queryString += "from Occasions oc ";
+    queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
     queryString += "INNER JOIN users us ON uo.UserId = us.id ";
     queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;

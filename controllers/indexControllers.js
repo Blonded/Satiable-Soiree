@@ -192,9 +192,9 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
       }
 
       results["host"] = logged;
-      results["loggedId"] = userid;
+      // results["loggedId"] = userid;
 
-      console.log(results);
+      // console.log(results);
 
       findUsersAndTheirFood(results, eventid);
 
@@ -241,7 +241,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     queryString += "LEFT OUTER JOIN Food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
 
-    console.log(queryString);
+    // console.log(queryString);
 
     db.Food.sequelize.query(queryString).then(function(joins) {
 

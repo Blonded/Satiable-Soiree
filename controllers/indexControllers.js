@@ -52,7 +52,7 @@ router.get("/usernav/:userid", function(req, res) {
     queryString += "SELECT oc.id, oc.name, oc.street, oc.image ";
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON oc.id = uo.OccasionId ";
-    queryString += "INNER JOIN users us ON us.id = uo.UserId ";
+    queryString += "INNER JOIN Users us ON us.id = uo.UserId ";
     queryString += "WHERE us.id = "+userid;
 
     db.Occasion.sequelize.query(queryString).then(function(joins) {
@@ -210,7 +210,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     queryString += "fo.name ";
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
-    queryString += "INNER JOIN users us ON uo.UserId = us.id ";
+    queryString += "INNER JOIN Users us ON uo.UserId = us.id ";
     queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
     queryString += " GROUP BY us.id";
@@ -226,7 +226,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
   }
 
   function findFood(obj, eventid) {
-    // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN USERS
+    // USING RAW QUERIES WITH SEQUELIZE IN THIS FUNCTION BECAUSE OF THE COMPLEXITY OF THE RELATIONSHIPS BETWEEN Users
     // FOODS AND Occasions
     /* TODO: make the querie with sequelize */
     var queryString = "";
@@ -235,7 +235,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     queryString += "fo.name ";
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
-    queryString += "INNER JOIN users us ON uo.UserId = us.id ";
+    queryString += "INNER JOIN Users us ON uo.UserId = us.id ";
     queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
 

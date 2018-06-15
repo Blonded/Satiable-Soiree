@@ -194,6 +194,8 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
       results["host"] = logged;
       results["loggedId"] = userid;
 
+      console.log(results);
+
       findUsersAndTheirFood(results, eventid);
 
     });
@@ -263,7 +265,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     });
   }
 
-    findUser(req.params.eventid, req.params.userId);
+    findUser(req.params.eventid, req.params.userid);
 
   }
 });

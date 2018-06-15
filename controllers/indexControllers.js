@@ -49,7 +49,7 @@ router.get("/usernav/:userid", function(req, res) {
 
     var queryString = "";
 
-    queryString += "SELECT oc.id, oc.name, oc.street, oc.image ";
+    queryString += "SELECT oc.id, oc.name, oc.street, oc.image, @loggedId :="+userid+" as loggedId ";
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON oc.id = uo.OccasionId ";
     queryString += "INNER JOIN Users us ON us.id = uo.UserId ";
@@ -71,7 +71,7 @@ router.get("/usernav/:userid", function(req, res) {
 
     var queryString = "";
 
-    queryString += "SELECT *, @attending := 1 as attending ";
+    queryString += "SELECT *, @attending := 1 as attending, @loggedId :="+userid+" as loggedId ";
     queryString += "from Occasions oc ";
     queryString += "WHERE oc.id NOT IN (SELECT uo.OccasionId ";
     queryString += "from Occasions oc ";

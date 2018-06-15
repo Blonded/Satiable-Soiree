@@ -14,7 +14,7 @@
           <!-- create event -->
           <a href="/createevent/" class="btn btn-secondary"> Create Event </a>
           <!-- join event // NON FUNCTIONAL -->
-          <a href="" class="btn btn-secondary joinbtn"> Join Existing Event </a>
+          <a href="#occasions" class="btn btn-secondary joinbtn"> Join Existing Event </a>
           <!-- Update profile, goes back to create -->
           <a href="/createprofile" class="btn btn-secondary updatebtn"> Update Profile </a>
           <br>
@@ -58,7 +58,7 @@
 
 
   <div class="container">
-    <div class="row container occasions">
+    <div class="row container occasions" id="occasions">
         <div class="col-12"><h2>Events that you are hosting</h2></div>
         {{#each listEventsHosting}}
           {{> events/event-block}}

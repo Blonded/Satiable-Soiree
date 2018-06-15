@@ -211,7 +211,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
     queryString += "INNER JOIN Users us ON uo.UserId = us.id ";
-    queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
+    queryString += "LEFT OUTER JOIN Food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
     queryString += " GROUP BY us.id";
 
@@ -236,7 +236,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     queryString += "from Occasions oc ";
     queryString += "INNER JOIN UserOccasions uo ON uo.OccasionId = oc.id ";
     queryString += "INNER JOIN Users us ON uo.UserId = us.id ";
-    queryString += "LEFT OUTER JOIN food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
+    queryString += "LEFT OUTER JOIN Food fo ON uo.OccasionId = fo.OccasionId and uo.UserId = fo.UserId ";
     queryString += "WHERE oc.id = "+eventid;
 
     console.log(queryString);

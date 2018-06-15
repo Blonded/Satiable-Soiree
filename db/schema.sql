@@ -11,7 +11,22 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping data for table satiable.food: ~1 rows (approximately)
+-- Dumping structure for table satiable.food
+CREATE TABLE IF NOT EXISTS `food` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `instructions` text,
+  `OccasionId` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `food_ibfk_1` (`OccasionId`),
+  KEY `food_ibfk_2` (`UserId`),
+  CONSTRAINT `food_ibfk_1` FOREIGN KEY (`OccasionId`) REFERENCES `occasions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `food_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table satiable.food: ~10 rows (approximately)
 /*!40000 ALTER TABLE `food` DISABLE KEYS */;
 INSERT INTO `food` (`id`, `name`, `link`, `instructions`, `OccasionId`, `UserId`) VALUES
 	(4, 'Chicken Sandwich', '', NULL, 5, 6),
@@ -26,6 +41,24 @@ INSERT INTO `food` (`id`, `name`, `link`, `instructions`, `OccasionId`, `UserId`
 	(15, 'Cereal', '', NULL, 5, 1);
 /*!40000 ALTER TABLE `food` ENABLE KEYS */;
 
+-- Dumping structure for table satiable.occasions
+CREATE TABLE IF NOT EXISTS `occasions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(100) NOT NULL DEFAULT 'https://us-east-1.tchyn.io/snopes-production/uploads/2015/01/picnic_fb.jpg',
+  `name` varchar(255) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `number` int(11) DEFAULT NULL,
+  `zipcode` varchar(5) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `starttime` time NOT NULL,
+  `endtime` time NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `occasions_ibfk_1` (`UserId`),
+  CONSTRAINT `occasions_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
 -- Dumping data for table satiable.occasions: ~6 rows (approximately)
 /*!40000 ALTER TABLE `occasions` DISABLE KEYS */;
 INSERT INTO `occasions` (`id`, `image`, `name`, `street`, `number`, `zipcode`, `city`, `date`, `starttime`, `endtime`, `UserId`) VALUES
@@ -36,6 +69,16 @@ INSERT INTO `occasions` (`id`, `image`, `name`, `street`, `number`, `zipcode`, `
 	(6, 'https://us-east-1.tchyn.io/snopes-production/uploads/2015/01/picnic_fb.jpg', 'Gustavo', 'street', 765, '94103', 'san francisco', '2018-12-08 08:00:00', '17:00:00', '21:00:00', 1),
 	(8, 'https://us-east-1.tchyn.io/snopes-production/uploads/2015/01/picnic_fb.jpg', 'Barbecue', 'streeet', 989, '94103', 'Hayward', '0000-00-00 00:00:00', '00:00:00', '00:00:00', 3);
 /*!40000 ALTER TABLE `occasions` ENABLE KEYS */;
+
+-- Dumping structure for table satiable.useroccasions
+CREATE TABLE IF NOT EXISTS `useroccasions` (
+  `OccasionId` int(11) NOT NULL DEFAULT '0',
+  `UserId` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`OccasionId`,`UserId`),
+  KEY `UserId` (`UserId`),
+  CONSTRAINT `useroccasions_ibfk_1` FOREIGN KEY (`OccasionId`) REFERENCES `occasions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `useroccasions_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table satiable.useroccasions: ~10 rows (approximately)
 /*!40000 ALTER TABLE `useroccasions` DISABLE KEYS */;
@@ -51,6 +94,17 @@ INSERT INTO `useroccasions` (`OccasionId`, `UserId`) VALUES
 	(3, 4),
 	(3, 5);
 /*!40000 ALTER TABLE `useroccasions` ENABLE KEYS */;
+
+-- Dumping structure for table satiable.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `allergies` text,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table satiable.users: ~8 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;

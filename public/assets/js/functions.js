@@ -4,6 +4,7 @@ function isUserLogged() {
 
         $(".navbar-guest").hide();
         $(".navbar-user").show();
+        $(".nav-dashboard").attr("href", "/usernav/"+window.sessionStorage.getItem('id'));
 
         $(".welcome").html("<span class='nav-link'><b>Welcome "+window.sessionStorage.getItem("firstname")+"</b></span>");
         return true;

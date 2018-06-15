@@ -35,6 +35,14 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "https://us-east-1.tchyn.io/snopes-production/uploads/2015/01/picnic_fb.jpg",
+      validate: {
+        len: [1]
+      }
+    },
     date: {
       type: DataTypes.DATE,
       allowNull: false

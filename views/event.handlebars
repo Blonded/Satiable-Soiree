@@ -70,7 +70,11 @@
     
     <br>
 
+    {{#if results.host}}
     <button id="event-submit" type="submit-button" class="btn btn-outline m-5">Update Event</button>
+    {{else}}
+    <button id="event-join" type="submit-button" data-user="{{this.}}" class="btn btn-outline m-5">Join Event</button>
+    {{/if}}
 
     <br>
     <br>

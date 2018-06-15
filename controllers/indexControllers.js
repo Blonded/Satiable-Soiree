@@ -81,7 +81,7 @@ router.get("/usernav/:userid", function(req, res) {
 
       obj["listOtherEvents"] = joins[0];
 
-      console.log("87", obj);
+      // console.log("87", obj);
 
       res.render("usernav", obj);
 
@@ -259,7 +259,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     }).then(function(result) {
 
       obj["infoevent"] = result.dataValues;
-      console.log("176", obj);
+      // console.log("176", obj);
 
       res.render("event", {results: obj});
     });

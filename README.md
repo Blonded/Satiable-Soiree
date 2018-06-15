@@ -11,7 +11,7 @@ Log-in to the site, and create your event [Name, Location, Date, Time]. Thereaft
 Enjoy.
 
 ## Use the app:
-* [Launch app](URL HERE)
+* [Launch app](https://warm-dusk-10926.herokuapp.com/)
 
 ![Homepage](http://i67.tinypic.com/2d1nvxd.png)
 

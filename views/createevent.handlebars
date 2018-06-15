@@ -29,7 +29,7 @@
           {{!-- name, street, number, zipcode, city,  --}}
           <form class="ml-2">
             <div class="form-row">
-              <div class="col-2">
+              <div class="col-3">
                 <label class="col-md-12" for="address-number">Address: (Input 0 if unknown)</label>
                 <input type="text" id="number" class="form-control" placeholder="Address #">
               </div>
@@ -76,13 +76,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Error</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Success!</h5>
       </div>
       <div class="modal-body text-center">
           <p>Event created with success. Go check it out!</p>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-secondary see-event">View your event</a>
+        <a href='/event/{{this.id}}/user/{{this.UserId}}' class="btn btn-secondary see-event">View your event</a>
       </div>
     </div>
   </div>

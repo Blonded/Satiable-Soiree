@@ -34,8 +34,8 @@ var loginRoutes = require("./controllers/loginControllers.js");
 
 app.use("/login", loginRoutes);
 
-db.sequelize.sync().then(function() {
+// db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-});
+// });

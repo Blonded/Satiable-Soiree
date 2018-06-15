@@ -1,68 +1,89 @@
 <!-- <p> This is the users navigation page, where the user can navigate to and from the home,
   to create an event after logging in/creating a profile.</p> -->
-<body id= "usernavbody">
-<div class = "container" id = "usernav-card">
-<div class="card usernavcard">
-  <div class="card-header">
-    <h3>Let us point you in the right direction...</h3>
-  </div>
-  <div class="card-body">
-    <h4 class= "usernavheader"> Navigate:
-    <hr>
-        <!-- buttons -->
-        <!-- create event -->
-        <a href="/createevent/" class="btn btn-secondary"> Create Event </a>
-        <!-- join event // NON FUNCTIONAL -->
-        <a href="" class="btn btn-secondary joinbtn"> Join Existing Event </a>
-        <!-- Update profile, goes back to create -->
-        <a href="/createprofile" class="btn btn-secondary updatebtn"> Update Profile </a>
-        <br><br>
+
+<body id="usernavbody">
+  <div class="container" id="usernav-card">
+    <div class="card usernavcard">
+      <div class="card-header">
+        <h3>Let us point you in the right direction...</h3>
+      </div>
+      <div class="card-body">
+        <h4 class="usernavheader"> Navigate:
+          <hr>
+          <!-- buttons -->
+          <!-- create event -->
+          <a href="/createevent/" class="btn btn-secondary"> Create Event </a>
+          <!-- join event // NON FUNCTIONAL -->
+          <a href="" class="btn btn-secondary joinbtn"> Join Existing Event </a>
+          <!-- Update profile, goes back to create -->
+          <a href="/createprofile" class="btn btn-secondary updatebtn"> Update Profile </a>
+          <br>
+          <br>
 
         </h4>
 
-    <h5 class="card-title">
-      Create an event:
-    </h5>
-    <hr>
-    <p class="card-text">
-    Create an event in your area, just input the information for the time, date,
-    location, etc in the form and tah-dah! You've got yourself a party!
-    </p>
-    <h5 class="card-title">
-      Join Existing Event:
-    </h5>
-    <hr>
-      <p class="card-text">
-        Have your friends already created an event you'd like to attend? Or maybe
-        you're curious about the pre-existing events in your area? Join and browse now!
-      </p>
-      <h5 class="card-title">
-        Update Profile:
-      </h5>
-      <hr>
+        <h5 class="card-title">
+          Create an event:
+        </h5>
+        <hr>
         <p class="card-text">
-          A change in your taste preference? New food allergy? All around new diet
-          choices? Don't worry! We've got you covered. Re-edit any preferences you may have previously
-          entered into your profile so you don't see the events you can't eat at!
+          Create an event in your area, just input the information for the time, date, location, etc in the form and tah-dah! You've
+          got yourself a party!
         </p>
+        <h5 class="card-title">
+          Join Existing Event:
+        </h5>
+        <hr>
+        <p class="card-text">
+          Have your friends already created an event you'd like to attend? Or maybe you're curious about the pre-existing events in
+          your area? Join and browse now!
+        </p>
+        <h5 class="card-title">
+          Update Profile:
+        </h5>
+        <hr>
+        <p class="card-text">
+          A change in your taste preference? New food allergy? All around new diet choices? Don't worry! We've got you covered. Re-edit
+          any preferences you may have previously entered into your profile so you don't see the events you can't eat at!
+        </p>
+
+
+
+
+      </div>
+
+    </div>
   </div>
-
-</div>
-</div>
-<!-- closes usernav container-->
+  <!-- closes usernav container-->
 
 
-<div class="container">
-  <div class="row container-occasions d-flex justify-content-center">
-
-
-<!-- add occasions here -->
-<!-- DO Not delete this div area. -->
-
+  <div class="container">
+    <div class="row container occasions">
+        <div class="col-12"><h2>Events that you are hosting</h2></div>
+        {{#each listEventsHosting}}
+          {{> events/event-block}}
+        {{/each}}
+    </div>
   </div>
-</div>
-
+  <br>
+  <div class="container">
+    <div class="row container occasions">
+        <div class="col-12"><h2>Events that you are attending</h2></div>
+        {{#each listEventsAttending}}
+          {{> events/event-block}}
+        {{/each}}
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row container occasions">
+        <div class="col-12"><h2>Other Events</h2></div>
+        {{#each listOtherEvents}}
+          {{> events/event-block}}
+        {{/each}}
+    </div>
+  </div>
+  <br>
 </body>
 
 <!--  JS Script source -->
-<script src="/assets/js/usernav.js"></script>

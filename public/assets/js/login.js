@@ -27,7 +27,7 @@ $(document).ready(function() {
                 window.sessionStorage.setItem('password', result.password);
                 window.sessionStorage.setItem('allergies', result.allergies);
 
-                window.location.href = '/usernav/';
+                window.location.href = '/usernav/'+result.id;
 
             } else {
 

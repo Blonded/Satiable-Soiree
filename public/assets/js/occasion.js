@@ -36,7 +36,7 @@ $(function() {
             
             if(result) {
 
-                $(".see-event").attr("href", "/event/"+result.id);
+                $(".see-event").attr("href", "/event/"+result.id+"/user/"+result.UserId);
                 $('#modal-success').modal('show');
 
             }

@@ -1,22 +1,15 @@
-<script>
-        var block = "";
-        block += "<div class='col-4'>";
-          block += "<div class='card' style='margin-top:25px;'>";
-            block +="<img class='card-img-top img-fluid' src='http://visitlawrencecounty.com/wp-content/uploads/2017/11/picnic.jpg' alt='Card image cap'>";
-            block +="<div class='card-body'>"              
-              block +="<h5 class='card-title'>"+name+"</h5>";
-              block +="<ul>";
-                if(posts[index].number == 0) {
-                  block +="<li>Address: "+posts[index].street+", "+posts[index].zipcode+"</li>";
-                } else {
-                  block +="<li>Address: "+posts[index].number+" "+posts[index].street+", " + posts[index].city +", "+posts[index].zipcode+"</li>";
-                }
-                block +="<li>Date: "+posts[index].date+"</li>";
-                block +="<li>Time"+posts[index].starttime+", "+post[index].endtime+"</li>";
-                block +="<li>"+posts[index].name+"</li>";
-              block +="</ul>";
-              block += "<a class='btn btn-primary href='event/"+ id >More details</a>;
-            block +="</div>";            
-          block +="</div>";
-        block +="</div>";
-</script>
+
+<div class='col-4'>
+    <div class='card' style='margin-top:25px;'>
+        <img class='card-img-top img-fluid' src='{{this.image}}' alt='Card image cap'>
+        <div class='card-body'>
+            <h5 class='card-title'>{{this.name}}</h5>
+            <ul>
+                <li>Address: {{this.number}} {{this.street}} {{this.zipcode}}</li>
+                <li>{{this.city}}</li>
+            </ul>
+            <a href='/event/{{this.id}}/user/{{this.UserId}}' class='btn btn-primary'>More details</a>
+
+        </div>
+    </div>
+</div>

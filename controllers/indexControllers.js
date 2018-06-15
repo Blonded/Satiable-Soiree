@@ -21,31 +21,78 @@ router.get("/login/", function(req, res) {
   res.render("login");
 });
 
-router.get("/usernav", function(req, res) {
-  res.render("usernav");
+router.get("/usernav/:userid", function(req, res) {
+
+  var userid = req.params.userid;
+
+  listEventsHosting(userid);
+
+  // res.render("usernav");
+
+  function listEventsHosting(userid) {
+    
+    db.Occasion.findAll({
+      where: {UserId: userid}
+    }).then(function(events) {
+
+      var results = {};
+
+      results["listEventsHosting"] = events;
+
+      listEventsAttending(results, userid);
+
+    });
+
+  }
+
+  function listEventsAttending(obj, userid) {
+
+    var queryString = "";
+
+    queryString += "SELECT oc.id, oc.name, oc.street, oc.image ";
+    queryString += "from occasions oc ";
+    queryString += "INNER JOIN useroccasions uo ON oc.id = uo.OccasionId ";
+    queryString += "INNER JOIN users us ON us.id = uo.UserId ";
+    queryString += "WHERE us.id = "+userid;
+
+    db.Occasion.sequelize.query(queryString).then(function(joins) {
+
+      obj["listEventsAttending"] = joins[0];
+
+      listsOtherEvents(obj, userid);
+      // console.log("61", obj);
+      // res.render("usernav", obj);
+
+    });
+
+  }
+
+  function listsOtherEvents(obj, userid) {
+
+    var queryString = "";
+
+    queryString += "SELECT *, @attending := 1 as attending ";
+    queryString += "from occasions oc ";
+    queryString += "WHERE oc.id NOT IN (SELECT uo.OccasionId ";
+    queryString += "from occasions oc ";
+    queryString += "INNER JOIN useroccasions uo on oc.id = uo.OccasionId WHERE uo.UserId = "+userid+")";
+
+    db.Occasion.sequelize.query(queryString).then(function(joins) {
+
+      obj["listOtherEvents"] = joins[0];
+
+      console.log("87", obj);
+
+      res.render("usernav", obj);
+
+    });
+
+  }
+
 });
 
 router.get("/createevent", function(req, res) {
   res.render("createevent");
-});
-
-router.get("/api/usernav", function(req, res) {
-
-  console.log('trying to get posts');
-    var query = {};
-    query['id'] = req.query.id;
-
-    // 1. Add a join here to include all of the Authors to these posts
-    db.Occasion.findAll({
-      include: [{
-        where: query,
-        model: db.User,
-      }]
-    }).then(function(occasions) {
-      res.json(occasions);
-      
-    });
-
 });
 
 router.post("/api/checkExistingEmail", function(req, res) {
@@ -99,12 +146,21 @@ router.post("/api/createevent", function(req, res) {
       
     }).then(function(result) {
 
+      createConnection(result.id, result.UserId);
+
       res.json(result);
 
     });
 
 });
 
+function createConnection(occasionId, userId) {
+
+  db.UserOccasion.create({UserId: userId, OccasionId : occasionId}).then(function(response) {
+
+  })
+
+}
 
 router.get("/event/:eventid/user/:userid", function(req, res) {
 
@@ -136,6 +192,7 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
       }
 
       results["host"] = logged;
+      results["loggedId"] = userid;
 
       findUsersAndTheirFood(results, eventid);
 
@@ -209,38 +266,6 @@ router.get("/event/:eventid/user/:userid", function(req, res) {
     findUser(req.params.eventid, req.params.userid);
 
   }
-});
-
-router.put("/api/pets/:id", function(req, res) {
-  console.log("hello inside put/update pets")
-  var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  pet.update({
-    sleepy: req.body.sleepy
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
-
-router.delete("/api/pets/:id", function(req, res) {
-
-  var condition = "id = " + req.params.id;
-
-  pet.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
 });
 
 // Export routes for server.js to use.

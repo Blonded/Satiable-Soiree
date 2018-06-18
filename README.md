@@ -13,7 +13,7 @@ Enjoy.
 ## Use the app:
 * [Launch app](https://warm-dusk-10926.herokuapp.com/)
 
-![Homepage](http://i67.tinypic.com/2d1nvxd.png)
+![Homepage](public/img/homepage.jpg)
 
 ## Required packages [NPM]:
 * Express
@@ -24,7 +24,9 @@ Enjoy.
 * Body-Parser
 * Sequelize
 
-![demo](public/img/index.gif)
+![demo](public/img/index2.gif)
+
+![validation demo](public/img/user_validation.gif)
 
 ## Built With:
 

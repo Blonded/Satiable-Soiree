@@ -24,6 +24,7 @@ Enjoy.
 * Body-Parser
 * Sequelize
 
+![demo](public/img/index.gif)
 
 ## Built With:
 

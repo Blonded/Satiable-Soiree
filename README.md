@@ -101,7 +101,7 @@ $(".btn-logout").on("click", function(event) {
 
 ## Authors 🖋
 
-* **Lena Martinson** [Lena Martinson](https://github.com/Blonded)
+* **Lena** [Lena Blonded](https://github.com/Blonded)
 * **Gustavo Gibo** [Gustavo Gibo](https://github.com/gustavogibo)
 * **Jessica Brush** [Jessica Brush](https://github.com/dandiflower)
 
